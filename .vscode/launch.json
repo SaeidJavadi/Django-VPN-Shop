@@ -1,0 +1,83 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // {
+    //   "name": "Celery",
+    //   "type": "python",
+    //   "request": "launch",
+    //   "module": "celery",
+    //   "console": "internalConsole",
+    //   "envFile": "D:\\MyProjects\\zVenvs\\publicEnv",
+    //   // "env": { "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe" },
+    //   "args": ["-A", "wapanel.celery", "worker", "-l", "info", "-P", "solo"]
+    // },
+    {
+      "name": "Django: RunServer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\manage.py",
+      "args": ["runserver"],
+      "env": {
+        "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe"
+        // "PYTHONWARNINGS": "always",
+        // "DJANGO_DB_NAME": "aroounddb",
+        // "DJANGO_DB_USER": "codeslave",
+        // "DJANGO_DB_PASSWORD": "codeslave",
+        // "DJANGO_DB_HOST": "172.17.0.2",
+        // "DJANGO_DB_PORT": "5432",
+        // "DJANGO_DEBUG": "True"
+      },
+      "django": true,
+      // "justMyCode": true,
+      "console": "internalConsole"
+    },
+    {
+      "name": "Django: makemigrations",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\manage.py",
+      "args": ["makemigrations"],
+      "env": {
+        "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe"
+      },
+      "django": true,
+      "console": "internalConsole"
+    },
+    {
+      "name": "Django: migrate",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\manage.py",
+      "args": ["migrate"],
+      "env": {
+        "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe"
+      },
+      "django": true,
+      "console": "internalConsole"
+    },
+    {
+      "name": "Django: createsuperuser",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\manage.py",
+      "args": ["createsuperuser"],
+      "env": {
+        "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe"
+      },
+      "django": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Django: shell",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\manage.py",
+      "args": ["shell"],
+      "env": {
+        "ENV_FILE": "D:\\MyProjects\\zVenvs\\publicEnv\\Scripts\\python.exe"
+      },
+      "django": true,
+      "console": "integratedTerminal"
+    }
+  ]
+}
