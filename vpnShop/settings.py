@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # apps
     'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
+    'vpn.apps.VpnConfig',
     # packges
     'rest_framework',
     'rest_framework.authtoken',
