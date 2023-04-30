@@ -1,28 +1,41 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark"
-     style="font-size:125%;font-weight:bold;color:#00dcff;padding:15px">
+     style="font-size:125%;
+            font-weight:bold;
+            color:#00dcff;
+            padding:15px">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
     {% comment %} <img src="bird.jpg" alt="logo" style="width:40px;"> {% endcomment %}
-    <a class="navbar-brand" href="#">Free Net</a>
+    <a class="navbar-brand" href="{% url 'vpn:home' %}">Free Net</a>
   </a>
   <!-- Links -->
   <ul class="navbar-nav" dir="rtl">
     {% if request.user.is_staff %}
       <li class="nav-item">
-        <a class="nav-link" target="_blank" href="/admin">Control Panel</a
+        <a class="nav-link" target="_blank" href="/admin">پنل مدیریت</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link"
-             style="color:green;"
-             href="{% url 'accounts:register' %}">Register an account</a>
+             style="color:green"
+             href="{% url 'accounts:register' %}">ثبت نام کاربر</a>
         </li>
       {% endif %}
       {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link"
-             style="color:red;"
-             href="{% url 'accounts:logout' %}">Logout</a>
+          <a class="nav-link" style="color:red" href="{% url 'accounts:logout' %}">خروج</a>
+        </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-item nav-link px-3"
+           style="color:#00ff62"
+           href="{% url 'accounts:login' %}">ورود</a>
+      </li>
+      {% if not request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-item nav-link px-3"
+             style="color:#ff00aa"
+             href="{% url 'accounts:register' %}">ثبت نام</a>
         </li>
       {% endif %}
       <li class="nav-item">
