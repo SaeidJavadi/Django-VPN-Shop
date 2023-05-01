@@ -37,12 +37,17 @@
 .login-box .user-box label {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   pointer-events: none;
   transition: .5s;
+}
+
+label {
+  display: inline-block;
+  text-align: right;
 }
 
 .login-box .user-box input:focus~label,
@@ -58,12 +63,12 @@
   display: inline-block;
   padding: 10px 20px;
   color: #03e9f4;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
+  margin-top: 10px;
   /* letter-spacing: 4px */
 }
 

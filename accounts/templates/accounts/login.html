@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-  ورود
+  فرم ورود
 {% endblock title %}
 {% block head %}
   <link rel="stylesheet" href="{% static 'root/css/styles.css' %}">
@@ -11,16 +11,16 @@
   <div class="box">
     <div class="login-box">
       {% include 'partials/messages.html' %}
-      <h2>ورود</h2>
+      <h2>فرم ورود</h2>
       <form action="." method="post">
         {% csrf_token %}
         <div class="user-box">
           {{ form.username }}
-          <label>Username</label>
+          <label>نام کاربری</label>
         </div>
         <div class="user-box">
           {{ form.password }}
-          <label>Password</label>
+          <label>رمزعبور</label>
         </div>
         <button type="submit">
           <a>

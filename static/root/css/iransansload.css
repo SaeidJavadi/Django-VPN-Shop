@@ -2,6 +2,6 @@
   font-family: "IRANSansX";
 font-style: normal;
 font-weight: 100;
-  src: url('../fonts/IRANSansX/woff2/IRANSansX-Medium.woff2') format('woff2'),
-       url('../fonts/IRANSansX/woff/IRANSansX-Medium.woff') format('woff');
+  src: url('../fonts/IRANSansX/woff2/IRANSansX-Regular.woff2') format('woff2'),
+       url('../fonts/IRANSansX/woff/IRANSansX-Regular.woff') format('woff');
 }
