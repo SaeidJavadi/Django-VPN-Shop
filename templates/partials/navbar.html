@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark"
-     style="font-size:125%;
+<nav class="navbar navbar-expand-md bg-dark navbar-dark"
+     style="font-size:100%;
             font-weight:bold;
             color:#00dcff;
             padding:15px">
@@ -9,7 +9,7 @@
     <a class="navbar-brand" href="{% url 'vpn:home' %}">Free Net</a>
   </a>
   <!-- Links -->
-  <ul class="navbar-nav" dir="rtl">
+  <ul class="nav navbar-nav ml-auto" dir="rtl">
     {% if request.user.is_staff %}
       <li class="nav-item">
         <a class="nav-link" target="_blank" href="/admin">پنل مدیریت</a
