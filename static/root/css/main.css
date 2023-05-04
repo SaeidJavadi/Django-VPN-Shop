@@ -1,0 +1,116 @@
+/* All rights reserved for Vitamin5G.com */
+body {
+    background-color: #141527; color:#c9fc03; font: 14px Yekan, Tahoma, Arial, sans-serif; line-height:29px; 
+
+    /* background-image: url('/static/images/blackblue.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; line-height:30px; }
+
+a { text-decoration: underline; color:#ffffff; }
+/* a:hover { text-decoration: none; color:#ebc109; } */
+a:hover { text-decoration: none; color:rgb(36, 231, 215); }
+a:focus { color:#d4eb08; outline:0}
+a, a img, img { border: 0; }
+
+
+.markstartup { background: url(/static/images/startup.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markspeedometer { background: url(/static/images/speedometer2.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.mark5g { background: url(/static/images/5gico.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markgamemedal { background: url(/static/images/game-console.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markmedal { background: url(/static/images/medal.png) right no-repeat; padding-right: 11px; direction:rtl;text-align: right; }
+.markvpn { background: url(/static/images/vpn.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.marknew { background: url(/static/images/new.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markcloud { background: url(/static/images/cloud-computing.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.marksheild { background: url(/static/images/shield.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markspeed { background: url(/static/images/speed16.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.marksecurity { background: url(/static/images/auth16.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markshared { background: url(/static/images/2user.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markquality { background: url(/static/images/quality16.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markip { background: url(/static/images/ip.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.mark247 { background: url(/static/images/247.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markmtproxy { background: url(/static/images/mtproxy.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markbest { background: url(/static/images/best.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markovpn { background: url(/static/images/ovpn.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markvpn1 { background: url(/static/images/vpn1.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markvpn2 { background: url(/static/images/vpn2.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markearth16 { background: url(/static/images/earth16.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markten { background: url(/static/images/ten.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markseven { background: url(/static/images/seven.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markfive { background: url(/static/images/five-stars.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markwinapp { background: url(/static/images/vitaminwinapp.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markmoney { background: url(/static/images/money.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markethernet { background: url(/static/images/ethernet.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markexchange { background: url(/static/images/exchange.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markstockmarket { background: url(/static/images/stockm.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markip2 { background: url(/static/images/ipp.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.mark5gg { background: url(/static/images/connectivity.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markcisco1 { background: url(/static/images/cisco_1.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+.markcisco2 { background: url(/static/images/cisco_2.png) right no-repeat; padding-right: 20px; direction:rtl;text-align: right; }
+
+
+@font-face { font-family: 'Yekan'; src: url('/static/fonts/yekan.woff') format('woff'), url('/static/fonts/yekan.woff') format('truetype'); }
+
+@media (min-width: 768px) and (max-width: 991px) {
+.container { margin-left: auto; margin-right: auto; width:auto; }
+}
+
+.nav { padding-right: 0; padding-left: initial; font-size: 18px; }
+.navbar { min-height: 70px; background-image: linear-gradient(#141527, #141527, #141527); border-bottom: 1px solid #141527;}
+/* .navbar { min-height: 70px;background-color: black; border-bottom: 1px solid #141527;} */
+.navbar-nav li { float: right; }
+.navbar .navbar-nav li a { padding-top: 0px; padding-bottom: 0px; text-decoration: none; line-height: 90px; color:#FFF; float: right;}
+.navbar .navbar-nav .active a { color:rgb(18, 221, 204); background:none; font-style: oblique; } 
+.spacer { float:left; height:21px; background:url(/static/images/nav-border.gif) repeat-y right 0; padding-right:2px; margin:36px 2px 0 0; }
+#logo { margin:0; font-size:0; line-height:0; float:left; }
+
+@media (min-width: 768px) {
+.navbar .navbar-nav li a:hover, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav li a:focus , .navbar .navbar-nav .active a:focus { color:#f8c724; no-repeat 50% 100%; } 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.nav { font-size: 15px; }
+#logo img { height: 75px; padding-top: 12px; }
+}
+
+@media (max-width: 767px) {
+.nav { border: none; }
+.navbar { min-height: 0px; }
+.navbar .navbar-nav li a { line-height: 35px; font-size:15px;}
+.navbar .navbar-nav li a:hover, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav li a:focus , .navbar .navbar-nav .active a:focus  { color:#f6cb44; background: none; }
+.spacer{ margin:9px 2px 0 0; }	
+.navbar-toggle { margin: 12px 6px; padding: 2px 8px; }
+.navbar .navbar-icon { color:#FFF; font-size: 18px; }
+.navbar .navbar-icon img{ padding-bottom: 3px;}
+#logo img { height: 55px; padding-top: 2px; padding-left:2px; }
+}
+
+.ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+}
+
+#sidebar { margin-top: 20px; padding-bottom: 15px; background-color: #2e2e2ea4; border-radius: 11px; color: #FFF; font-size: 14px; line-height: 25px; overflow: auto; }
+#sidebar .more-height { line-height: 25px;  }
+#sidebar h3 { color:#d4eb08; font-size: 20px;direction: rtl;text-align: center; padding-top: 10px;}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+#sidebar { padding-left: 10px; }
+}
+
+@media (max-width: 991px) {
+    #sidebar { margin: 40px 10px 0; }
+    #sidebar .sidebar-section {  float: right;}
+    #sidebar .t-center { text-align: center; }
+    #sidebar .sidebar-section div { display: inline-block; text-align: right; }
+}
+
+.slider-sections-div{
+    direction: rtl;
+    text-align: right;
+}
