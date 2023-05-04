@@ -14,18 +14,19 @@ def userRegister(request):
             cd = form.cleaned_data
             if not User.objects.filter(username=cd['username']).exists():
                 if not User.objects.filter(phone=cd['phone']).exists():
-                    pass
                     if not User.objects.filter(email=cd['email']).exists():
                         user = User.objects.create_user(
-                            username=cd['username'], email=cd['email'], password=cd['password1'])
+                            username=cd['username'], phone=cd['phone'], email=cd['email'], password=cd['password1'])
                         user.save()
-                        messages.success(request, 'You successfully registered a user', 'success')
-                        return redirect('creator:index')
+                        messages.success(
+                            request, 'You successfully registered a user', 'success')
+                        return redirect('vpn:home')
                     else:
                         messages.error(request, 'This Email is exists',
                                        'warning')
                 else:
-                    messages.error(request, 'This Username is exists', 'warning')
+                    messages.error(
+                        request, 'This Username is exists', 'warning')
             else:
                 messages.error(request, 'This Username is exists', 'warning')
         else:
@@ -43,19 +44,23 @@ def userLogin(request):
             if form.is_valid():
                 cd = form.cleaned_data
                 if User.objects.filter(username=cd['username']).exists():
-                    user = authenticate(request, username=cd['username'], password=cd['password'])
+                    user = authenticate(
+                        request, username=cd['username'], password=cd['password'])
                     if user is not None:
                         login(request, user)
-                        messages.success(request, 'logged in successfully', 'success')
-                        return redirect('creator:index')
+                        messages.success(
+                            request, 'logged in successfully', 'success')
+                        return redirect('vpn:home')
                     else:
-                        messages.error(request, 'your username Or Password is wrong', 'warning')
+                        messages.error(
+                            request, 'your username Or Password is wrong', 'warning')
                 else:
                     messages.error(request, 'No account created with this username',
                                    'warning')
                     return redirect('accounts:login')
             else:
-                messages.error(request, 'Please enter your information correctly', 'warning')
+                messages.error(
+                    request, 'Please enter your information correctly', 'warning')
         else:
             form = LoginForm()
         return render(request, 'accounts/login.html', {'form': form})
@@ -66,4 +71,4 @@ def userLogin(request):
 def LogoutPage(request):
     logout(request)
     messages.success(request, 'You Logged Out successfully', 'success')
-    return redirect('creator:index')
+    return redirect('vpn:home')

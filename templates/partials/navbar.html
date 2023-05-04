@@ -1,11 +1,16 @@
 {% load static %}
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand/logo -->
-    <a class="navbar-brand" href="{% url 'vpn:home' %}" style="margin:0 0 0 10px;">
+    <a class="navbar-brand"
+       href="{% url 'vpn:home' %}"
+       style="margin:0 0 0 10px;">
         {% comment %} <img src="bird.jpg" alt="logo" style="width:40px;"> {% endcomment %}
         {% comment %} <a class="navbar-brand" href="{% url 'vpn:home' %}">Free Net</a> {% endcomment %}
-        <img alt="logo" class="navbar-brand img-responsive" id="logo"  src="{% static 'root/src/logo.png' %}" 
-        style="width:60px;"/>
+        <img alt="logo"
+             class="navbar-brand img-responsive"
+             id="logo"
+             src="{% static 'root/src/logo.png' %}"
+             style="width:60px;"/>
     </a>
     <button class="navbar-toggler"
             data-target="#collapsibleNavbar"
@@ -23,46 +28,46 @@
             {% if request.user.is_staff %}
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="/admin">پنل مدیریت</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           style="color:green"
-                           href="{% url 'accounts:register' %}">ثبت نام کاربر</a>
-                    </li>
-                {% endif %}
-                {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" style="color:red" href="{% url 'accounts:logout' %}">خروج</a>
-                    </li>
-                {% endif %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       style="color:green"
+                       href="{% url 'accounts:register' %}">ثبت نام کاربر</a>
+                </li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" style="color:red" href="{% url 'accounts:logout' %}">خروج</a>
+                </li>
+            {% endif %}
+            {% if not request.user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-item nav-link px-3"
                        style="color:#00ff62"
                        href="{% url 'accounts:login' %}">ورود</a>
                 </li>
-                {% if not request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-item nav-link px-3"
-                           style="color:#ff00aa"
-                           href="{% url 'accounts:register' %}">ثبت نام</a>
-                    </li>
-                {% endif %}
                 <li class="nav-item">
-                    <a class="nav-item nav-link px-3" href="#">خرید</a>
+                    <a class="nav-item nav-link px-3"
+                       style="color:#ff00aa"
+                       href="{% url 'accounts:register' %}">ثبت نام</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link px-3" href="#">راهنما کانکشن</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link px-3" href="#">راهنما و دانلود کانکشن</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link px-3" href="#">پشتیبانی</a>
-                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-item nav-link px-3" href="#"> خرید</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link px-3" href="#">سرورها</a>
+                <a class="nav-item nav-link px-3" href="#">راهنما کانکشن</a>
             </li>
-        </ul>
-    </div>
+            <li class="nav-item">
+                <a class="nav-item nav-link px-3" href="#">راهنما و دانلود کانکشن</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link px-3" href="#">پشتیبانی</a>
+            </li>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link px-3" href="#">سرورها</a>
+        </li>
+    </ul>
+</div>
 </nav>
