@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-10 18:32+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\vpn\apps.py:7
+msgid "vpn"
+msgstr "وی پی ان"
+
+#: .\vpn\models.py:7
+msgid "VPN Title"
+msgstr "عنوان وی پی ان"
+
+#: .\vpn\models.py:8
+msgid "Active Day"
+msgstr "روزهای فعال"
+
+#: .\vpn\models.py:9
+msgid "Price Toman"
+msgstr "قیمت به تومان"
+
+#: .\vpn\models.py:10
+msgid "Price Digital currency"
+msgstr "قیمت به ارز دیجیتال"
+
+#: .\vpn\models.py:11
+msgid "Row"
+msgstr "ترتیب"
+
+#: .\vpn\models.py:12
+msgid "Color"
+msgstr "رنگ"
+
+#: .\vpn\models.py:15
+msgid "vpnlist"
+msgstr "لیست وی پی ان"
+
+#: .\vpn\models.py:16
+msgid "vpnlists"
+msgstr "لیست وی پی ان ها"
