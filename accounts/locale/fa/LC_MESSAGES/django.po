@@ -75,7 +75,7 @@ msgstr "این نام کاربری وجود دارد"
 
 #: .\accounts\views.py:48
 msgid "logged in successfully"
-msgstr "با موفقیت وارد شوید"
+msgstr "با موفقیت به حساب کاربری وارد شدید"
 
 #: .\accounts\views.py:51
 msgid "your username Or Password is wrong"

@@ -3,20 +3,20 @@
     <!-- Brand/logo -->
     <a class="navbar-brand"
        href="{% url 'vpn:home' %}"
-       style="margin:0 0 0 10px;">
+       style="margin:0 0 0 10px">
         {% comment %} <img src="bird.jpg" alt="logo" style="width:40px;"> {% endcomment %}
         {% comment %} <a class="navbar-brand" href="{% url 'vpn:home' %}">Free Net</a> {% endcomment %}
         <img alt="logo"
              class="navbar-brand img-responsive"
              id="logo"
              src="{% static 'root/src/logo.png' %}"
-             style="width:60px;"/>
+             style="width:60px" />
     </a>
     <button class="navbar-toggler"
             data-target="#collapsibleNavbar"
             data-toggle="collapse"
             type="button"
-            style="margin:0 10px 0 0;">
+            style="margin:0 10px 0 0">
         <span class="navbar-icon">
             <img alt="nav" src="{% static 'root/src/nav-icon.png' %}">
             منو
@@ -37,7 +37,9 @@
             {% endif %}
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-item nav-link px-3" style="color:red" href="{% url 'accounts:logout' %}">خروج</a>
+                    <a class="nav-item nav-link px-3"
+                       style="color:red"
+                       href="{% url 'accounts:logout' %}">خروج</a>
                 </li>
             {% endif %}
             {% if not request.user.is_authenticated %}
@@ -53,7 +55,7 @@
                 </li>
             {% endif %}
             <li class="nav-item">
-                <a class="nav-item nav-link px-3" href="#"> خرید</a>
+                <a class="nav-item nav-link px-3" href="{% url 'vpn:buy' %}">خرید</a>
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link px-3" href="#">راهنما کانکشن</a>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    {% trans "Free Net | Buy VPN" %}
+{% endblock title %}
+{% block body %}
+    {% trans "Buy Page" %}
+    {% include "partials/messages.html" %}
+    {% csrf_token %}
+    <form action="" method="post">
+        {% for vp in vpnlist %}<p>{{ vp }}</p>{% endfor %}
+    </form>
+{% endblock body %}

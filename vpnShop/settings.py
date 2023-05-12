@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-*d0@xvjoi-)l$e2)6w9_me(_n_ukuy7==tin%20-iaa6@ijhq)
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+SITE_ADDRESS = '127.0.0.1:8000'
 
 
 # Application definition
@@ -71,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # My Context Processors
+                'vpn.context_processors.siteAddress'
             ],
         },
     },
