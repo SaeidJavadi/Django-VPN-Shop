@@ -1,8 +1,11 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block title %}
     Free Net
 {% endblock title %}
 {% block body %}
     Home page
-    {% include 'partials/messages.html' %}
+    <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-4" dir="rtl">{{ sidebar|safe }}</div>
+    </div>
 {% endblock body %}

@@ -173,8 +173,11 @@ REST_FRAMEWORK = {
     ]
 }
 
-CKEDITOR_UPLOAD_PATH = BASE_DIR / 'media/uploads/'
-CKEDITOR_IMAGE_BACKEND = 'pillow'
+# ckeditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_BROWSE_SHOW_DIRS = True
+CKEDITOR_ALLOW_NONIMGE_FILES = True
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
