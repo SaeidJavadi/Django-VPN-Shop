@@ -8,7 +8,7 @@ class vpnlistForm(forms.ModelForm):
         model = vpnlist
         fields = ('title', 'day', 'price_t', 'price_c', 'row', 'color')
         widgets = {
-            'title': forms.Select(attrs={'class': 'form-control'}),
+            'title': forms.RadioSelect(attrs={'class': 'form-control'}),
         }
         labels = {
             'title': 'عنوان',

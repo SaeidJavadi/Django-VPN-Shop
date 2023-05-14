@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from ckeditor.fields import RichTextField
 
 
 class vpnlist(models.Model):
@@ -20,3 +21,18 @@ class vpnlist(models.Model):
 
     def get_absolute_url(self):
         return reverse("vpnlist_detail", kwargs={"pk": self.pk})
+
+
+class Sidebar(models.Model):
+    title = models.CharField(max_length=150, verbose_name=_("title"))
+    content = RichTextField()
+
+    class Meta:
+        verbose_name = 'Sidebar'
+        verbose_name_plural = 'Sidebars'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("sidebar_detail", kwargs={"pk": self.pk})
