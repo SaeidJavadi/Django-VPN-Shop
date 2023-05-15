@@ -6,6 +6,12 @@
     Home page
     <div class="row">
         <div class="col-md-8"></div>
-        <div class="col-md-4" dir="rtl">{{ sidebar|safe }}</div>
+        <div class="hidden-xs col-md-4" id="sidebar" dir="rtl">
+        <div class="sidebar-section">
+        <div class="slider-sections-div">
+            {{ sidebar|safe }}
+        </div>
+        </div>
+        </div>
     </div>
 {% endblock body %}
