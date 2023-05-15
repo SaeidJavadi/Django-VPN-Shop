@@ -1,8 +1,10 @@
+@import url(./iransansload.css);
+
 /* All rights reserved for Vitamin5G.com */
 body {
     background-color: dark;
     color: #ffffff;
-    font: 14px Yekan, Tahoma, Arial, sans-serif;
+    font: 14px IranSansX, Tahoma, Arial, sans-serif;
     line-height: 29px;
 
     /* background-image: url('/static/images/blackblue.jpg'); */
@@ -281,12 +283,6 @@ img {
     text-align: right;
 }
 
-
-@font-face {
-    font-family: 'Yekan';
-    src: url('/static/fonts/yekan.woff') format('woff'), url('/static/fonts/yekan.woff') format('truetype');
-}
-
 @media (min-width: 768px) and (max-width: 991px) {
     .container {
         margin-left: auto;
@@ -467,4 +463,12 @@ img {
 .slider-sections-div {
     direction: rtl;
     text-align: right;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-pdd {
+    padding: 15px 20px 40px 20px;
 }
