@@ -12,4 +12,4 @@ def home(request):
 
 def vpnbuy(request):
     vpli = vpnlist.objects.all()
-    return render(request=request, template_name="vpn/vpnbuy.html", context={'vpnlist': vpli})
+    return render(request=request, template_name="vpn/buy.html", context={'vpnlist': vpli})

@@ -54,3 +54,7 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+td {
+    padding: 12px 12px 12px 12px;
+}
