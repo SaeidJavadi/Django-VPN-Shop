@@ -10,5 +10,5 @@ def home(request):
 
 
 def vpnbuy(request):
-    vpli = vpnlist.objects.all()
+    vpli = vpnlist.objects.all().order_by('row')
     return render(request=request, template_name="vpn/buy.html", context={'vpnall': vpli})

@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load basetags %}
 <div class="row">
     <div class="col-md-8 rtl">
         <div class="modal hide fade"
@@ -229,8 +230,8 @@
                                                                   text-align: right;
                                                                   clear: both;
                                                                   float:left;
-                                                                  color: #ffffff">
-                                                        {{ vpn.title }} - {{ vpn.price_t }}
+                                                                  color: {{ vpn.color }};">
+                                                        {{ vpn.title }} - {{ vpn.price_t }} - {{ vpn.day|daytomo }} ماهه
                                                     </label>
                                                 </div>
                                             </td>
