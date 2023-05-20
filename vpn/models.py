@@ -25,11 +25,11 @@ class vpnlist(models.Model):
 
 class Sidebar(models.Model):
     title = models.CharField(max_length=150, verbose_name=_("title"))
-    content = RichTextField()
+    content = RichTextField(verbose_name=_("content"))
 
     class Meta:
-        verbose_name = 'Sidebar'
-        verbose_name_plural = 'Sidebars'
+        verbose_name = _('Sidebar')
+        verbose_name_plural = _('Sidebars')
 
     def __str__(self):
         return self.title

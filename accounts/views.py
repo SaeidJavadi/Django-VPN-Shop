@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
-from accounts.forms import LoginForm, RegisterForm, EditProfileForm
+from accounts.forms import LoginForm, RegisterForm, EditProfileForm, ChangePassword
 from django.contrib import messages
 from accounts.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import update_session_auth_hash
 
 
 def userRegister(request):
@@ -68,35 +69,40 @@ def LogoutPage(request):
     return redirect('vpn:home')
 
 
-
 @login_required()
 def profile(request):
     user = User.objects.get(email=request.user.email)
     form = EditProfileForm(request.POST or None, instance=user)
-    form_password = ResetPassword(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            messages.success(request, _('updated successfully.'), extra_tags='alert alert-success')
+            messages.success(request, _('updated successfully'), extra_tags='alert alert-success')
             return redirect('accounts:profile')
-        elif form_password.is_valid():
-            cd = form_password.cleaned_data
-            user.set_password(cd['password1'])
-            user.save()
-            update_session_auth_hash(request, user)
-            messages.success(request, _('Your password has been successfully changed'), 'success')
-            logout(request)
-            return redirect('accounts:login')
         else:
-            # cd = form.cleaned_data
-            # error = ''
-            # if User.objects.filter(email=cd['email']).exists():
-            #     error = 'ایمیلی که وارد کرده اید از قبل وجود دارد'
-            # if User.objects.filter(email=cd['phone']).exists():
-            #     error = 'شماره تلفنی که وارد کرده اید از قبل وجود دارد!!'
-            # elif User.objects.filter(idcode=cd['idcode']).exists():
-            #     error = 'کدملی که وارد کرده اید از قبل وجود دارد!!'
-            messages.success(request, _('Error updating your profile!!'), extra_tags='warning')
+            messages.success(request, _('Error updating your profile !!'), extra_tags='warning')
             return redirect('accounts:profile')
     else:
-        return render(request, 'accounts/profile.html', {'user':user, 'form': form, 'form_password':form_password})
+        request.session['email'] = user.email
+        request.session['username'] = user.username
+        print(user.email, user.username)
+        return render(request, 'accounts/profile.html', {'form': form})
+
+
+def resetpass(request):
+    if request.user.is_active:
+        if request.method == 'POST':
+            form = ChangePassword(request.POST)
+            if form.is_valid():
+                cd = form.cleaned_data
+                user = User.objects.get(email=request.session['email'], username=request.session['username'])
+                user.set_password(cd['password1'])
+                user.save()
+                update_session_auth_hash(request, user)
+                messages.success(request, _('Your password has been successfully changed'), 'success')
+                return redirect('accounts:login')
+        else:
+            if request.session['email'] and request.session['username']:
+                form = ChangePassword()
+                return render(request, 'accounts/reset.html', {'form': form})
+    else:
+        return redirect('vpn:home')

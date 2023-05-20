@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:32+0330\n"
+"POT-Creation-Date: 2023-05-20 20:28+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: .\vpn\apps.py:7
-msgid "vpn"
+
+#: .\vpnShop\urls.py:25 .\vpnShop\urls.py:26
+msgid "Administrator Control Panel"
+msgstr "پنل مدیریت"
+
+#: .\vpnShop\urls.py:27
+msgid "Wellcome to Control Panel"
+msgstr "به پنل مدیریت خوش آمدید"
+
+#: .\vpn\apps.py:8
+msgid "VPN"
 msgstr "وی پی ان"
 
-#: .\vpn\models.py:7
+#: .\vpn\models.py:8
 msgid "VPN Title"
 msgstr "عنوان وی پی ان"
 
-#: .\vpn\models.py:8
+#: .\vpn\models.py:9
 msgid "Active Day"
 msgstr "روزهای فعال"
 
-#: .\vpn\models.py:9
+#: .\vpn\models.py:10
 msgid "Price Toman"
 msgstr "قیمت به تومان"
 
-#: .\vpn\models.py:10
+#: .\vpn\models.py:11
 msgid "Price Digital currency"
 msgstr "قیمت به ارز دیجیتال"
 
-#: .\vpn\models.py:11
+#: .\vpn\models.py:12
 msgid "Row"
 msgstr "ترتیب"
 
-#: .\vpn\models.py:12
+#: .\vpn\models.py:13
 msgid "Color"
 msgstr "رنگ"
 
-#: .\vpn\models.py:15
+#: .\vpn\models.py:16
 msgid "vpnlist"
 msgstr "لیست وی پی ان"
 
-#: .\vpn\models.py:16
+#: .\vpn\models.py:17
 msgid "vpnlists"
 msgstr "لیست وی پی ان ها"
+
+#: .\vpn\models.py:27
+msgid "title"
+msgstr "عنوان"
+
+#: .\vpn\models.py:28
+msgid "content"
+msgstr "محتوا"
+
+#: .\vpn\models.py:31
+msgid "Sidebar"
+msgstr "سایدبار"
+
+#: .\vpn\models.py:32
+msgid "Sidebars"
+msgstr "سایدبار"
+
+#: .\vpn\templates\vpn\buy.html:5
+msgid "Buy VPN"
+msgstr "خرید وی پی ان"
+
+#: .\vpn\urls.py:5
+msgid "vpn"
+msgstr "وی پی ان"
