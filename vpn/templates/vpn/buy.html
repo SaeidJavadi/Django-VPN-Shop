@@ -8,5 +8,6 @@
     <link rel="stylesheet" href="{% static 'vpn/css/buypg.css' %}">
 {% endblock head %}
 {% block body %}
-    {% include "vpn/buyor.html" %}
+    {% include "vpn/buyor.html" with vpns=vpnall %}
+    {% include "vpn/sidebar.html" %}
 {% endblock body %}

@@ -179,9 +179,7 @@
             </style>
             {% csrf_token %}
             <form class="form_buy"
-                  id="buy_submit"
-                  method="post"
-                  style="margin-top:25px">
+                  id="buy_submit"                 method="post"                  style="margin-top:25px">
                 <div class="form-group" id="buy_sign_up">
                     <table class="form_buy">
                         <tbody>
@@ -200,9 +198,6 @@
                     </table>
                 </div>
                 <div style="opacity: 1.0;">
-                    <input name="csrfmiddlewaretoken"
-                           type="hidden"
-                           value="c1hCuY8c96mibu8Vyn97FGTYxYOT9hMSuXDem3hTe2Cnt9FJYTntQlFwWeMn0eNx" />
                     <div class="formbox">
                         <h2 class="h2 font-weight-normal"
                             style="direction: rtl;
@@ -216,236 +211,31 @@
                                 <table class="table table-dark table-striped table-bordered table-hover"
                                        id="cardtable">
                                     <tbody>
-                                        <tr id="trproduct_0" onclick="reply_click(0)">
+                                        {% for vpn in vpns %}
+                                        <tr id="trproduct_{{ forloop.counter0 }}" onclick="reply_click({{ vpn.price_t }})">
                                             <td class="None">
                                                 <div style="display:flex;
                                                             flex-direction: row;
                                                             justify-content: right;
                                                             align-items: center">
-                                                    <input id="inputradio_0"
+                                                    <input id="inputradio_{{ forloop.counter0 }}"
                                                            name="selected_service"
-                                                           onclick="reply_click(0)"
+                                                           onclick="reply_click({{ vpn.price_t }})"
                                                            type="radio"
-                                                           value="0" />
-                                                    <label for="inputradio_0"
-                                                           onclick="reply_click(0)"
+                                                           value="{{ vpn.id }}" />
+                                                    <label for="inputradio_{{ forloop.counter0 }}"
+                                                           onclick="reply_click({{ vpn.price_t }})"
                                                            style="margin-right: 5px;
                                                                   text-align: right;
                                                                   clear: both;
                                                                   float:left;
                                                                   color: #ffffff">
-                                                        وی‌پی‌ان سه‌ماهه سه‌کاربره 300‌گیگ - - قیمت: 300,000 تومان - تحویل آنی
+                                                        {{ vpn.title }} - {{ vpn.price_t }}
                                                     </label>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr id="trproduct_1" onclick="reply_click(1)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_1"
-                                                           name="selected_service"
-                                                           onclick="reply_click(1)"
-                                                           type="radio"
-                                                           value="1" />
-                                                    <label for="inputradio_1"
-                                                           onclick="reply_click(1)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #ffffff">
-                                                        وی‌پی‌ان شش‌ماهه سه‌کاربره 600‌گیگ - - قیمت: 500,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_2" onclick="reply_click(2)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_2"
-                                                           name="selected_service"
-                                                           onclick="reply_click(2)"
-                                                           type="radio"
-                                                           value="2" />
-                                                    <label for="inputradio_2"
-                                                           onclick="reply_click(2)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #ffffff">
-                                                        وی‌پی‌ان یک‌ساله سه‌کاربره 1200‌گیگ - - قیمت: 900,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_3" onclick="reply_click(3)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_3"
-                                                           name="selected_service"
-                                                           onclick="reply_click(3)"
-                                                           type="radio"
-                                                           value="3" />
-                                                    <label for="inputradio_3"
-                                                           onclick="reply_click(3)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #ff4340">
-                                                        وی‌پی‌ان سه‌ماهه چها‌رکاربره 600‌گیگ - - قیمت: 450,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_4" onclick="reply_click(4)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_4"
-                                                           name="selected_service"
-                                                           onclick="reply_click(4)"
-                                                           type="radio"
-                                                           value="4" />
-                                                    <label for="inputradio_4"
-                                                           onclick="reply_click(4)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #ff4340">
-                                                        وی‌پی‌ان شش‌ماهه چها‌رکاربره 1200‌گیگ - - قیمت: 750,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_5" onclick="reply_click(5)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_5"
-                                                           name="selected_service"
-                                                           onclick="reply_click(5)"
-                                                           type="radio"
-                                                           value="5" />
-                                                    <label for="inputradio_5"
-                                                           onclick="reply_click(5)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #ff4340">
-                                                        وی‌پی‌ان یک‌ساله چهارکاربره 2400‌گیگ - - قیمت: 1,400,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_6" onclick="reply_click(6)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_6"
-                                                           name="selected_service"
-                                                           onclick="reply_click(6)"
-                                                           type="radio"
-                                                           value="6" />
-                                                    <label for="inputradio_6"
-                                                           onclick="reply_click(6)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #3cff2c">
-                                                        وی‌پی‌ان سه‌ماهه پنج‌کاربره 900‌گیگ - - قیمت: 600,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_7" onclick="reply_click(7)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_7"
-                                                           name="selected_service"
-                                                           onclick="reply_click(7)"
-                                                           type="radio"
-                                                           value="7" />
-                                                    <label for="inputradio_7"
-                                                           onclick="reply_click(7)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #3cff2c">
-                                                        وی‌پی‌ان شش‌ماهه پنج‌کاربره 1800‌گیگ - - قیمت: 900,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_8" onclick="reply_click(8)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_8"
-                                                           name="selected_service"
-                                                           onclick="reply_click(8)"
-                                                           type="radio"
-                                                           value="8" />
-                                                    <label for="inputradio_8"
-                                                           onclick="reply_click(8)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #3cff2c">
-                                                        وی‌پی‌ان یک‌ساله پنج‌کاربره 3600‌گیگ - - قیمت: 1,600,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="trproduct_9" onclick="reply_click(9)">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="inputradio_9"
-                                                           name="selected_service"
-                                                           onclick="reply_click(9)"
-                                                           type="radio"
-                                                           value="9" />
-                                                    <label for="inputradio_9"
-                                                           onclick="reply_click(9)"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color: #fff03e">
-                                                        وی‌پی‌ان یک‌ساله ده‌کاربره 7200‌گیگ - - قیمت: 2,500,000 تومان - تحویل آنی
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </section>
@@ -475,9 +265,6 @@
                                 <strong class="rtl" style="font-size: medium;">تمامی سرویس‌ها دارای آیپی ثابت می‌باشند</strong>
                             </p>
                             <strong id="finalprice_str">مبلغ نهایی:</strong> <span id="finalprice">0</span>
-                            <p>
-                                <strong id="finalpricetron_str">مبلغ معادل با پرداخت توسط ترون:</strong> <span id="finalpricetron">0</span> <span style="font-size:large;">+ 10% اعتبار زمانی و حجمی بیشتر+ 1 یوزر آنلاین هدیه</span>
-                            </p>
                         </div>
                         <p class="center rtl"
                            style="font-size: medium;

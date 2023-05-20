@@ -6,10 +6,9 @@ from vpn.models import vpnlist, Sidebar
 
 
 def home(request):
-    sidebartext = Sidebar.objects.last().content
-    return render(request=request, template_name="vpn/home.html", context={'sidebar': sidebartext})
+    return render(request=request, template_name="vpn/home.html")
 
 
 def vpnbuy(request):
     vpli = vpnlist.objects.all()
-    return render(request=request, template_name="vpn/buy.html", context={'vpnlist': vpli})
+    return render(request=request, template_name="vpn/buy.html", context={'vpnall': vpli})

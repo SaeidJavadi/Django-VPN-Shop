@@ -5,13 +5,9 @@
 {% block body %}
     Home page
     <div class="row">
-        <div class="col-md-8"></div>
-        <div class="hidden-xs col-md-4" id="sidebar" dir="rtl">
-        <div class="sidebar-section">
-        <div class="slider-sections-div">
-            {{ sidebar|safe }}
+        <div class="col-md-8">
+            
         </div>
-        </div>
-        </div>
+{% include 'vpn/sidebar.html' %}
     </div>
 {% endblock body %}

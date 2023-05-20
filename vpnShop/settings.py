@@ -75,7 +75,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # My Context Processors
-                'vpn.context_processors.siteAddress'
+                'vpn.context_processors.siteAddress',
+                'vpn.context_processors.sideBar'
             ],
         },
     },
