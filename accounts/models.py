@@ -33,14 +33,15 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=150, unique=True, verbose_name=_("Username"))
     email = models.EmailField(verbose_name=_('email address'), max_length=255, unique=True)
-    phone = models.IntegerField(verbose_name=_('Phone Number'), unique=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    phone = models.IntegerField(verbose_name=_('Phone Number'), unique=True, blank=True, null=True)
+    is_active = models.BooleanField(default=True, verbose_name=_("is_active"))
+    is_staff = models.BooleanField(default=False, verbose_name=_("is_staff"))
+    is_superuser = models.BooleanField(default=False, verbose_name=_("is_superuser"))
 
     objects = UserManager()
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['phone']
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return self.username

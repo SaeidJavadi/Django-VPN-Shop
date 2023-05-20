@@ -43,7 +43,7 @@ class UserChangeForm(forms.ModelForm):
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('username', 'email', 'is_staff', 'is_active')
+    list_display = ('username', 'email', 'is_active', 'is_staff', 'is_superuser')
     # list_editable = ('is_staff', 'is_active')
     list_filter = ('is_staff', 'groups')
     fieldsets = (

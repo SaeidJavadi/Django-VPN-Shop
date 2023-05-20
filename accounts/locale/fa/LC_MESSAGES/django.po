@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 20:28+0330\n"
+"POT-Creation-Date: 2023-05-20 20:56+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,15 +42,15 @@ msgstr "کاربران باید نام کاربری داشته باشند"
 msgid "Users must have an Phone Number"
 msgstr "کاربران باید یک شماره تلفن داشته باشند"
 
-#: .\accounts\models.py:19
+#: .\accounts\models.py:19 .\accounts\models.py:38
 msgid "is_staff"
-msgstr "کارمند"
+msgstr "همکار"
 
-#: .\accounts\models.py:20
+#: .\accounts\models.py:20 .\accounts\models.py:39
 msgid "is_superuser"
 msgstr "مدیر"
 
-#: .\accounts\models.py:21
+#: .\accounts\models.py:21 .\accounts\models.py:37
 msgid "is_active"
 msgstr "فعال"
 
@@ -62,11 +62,11 @@ msgstr "آدرس ایمیل"
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:50
 msgid "User"
 msgstr "کاربر"
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:51
 msgid "Users"
 msgstr "کاربران"
 
@@ -85,10 +85,6 @@ msgstr "تغییر رمزعبور"
 #: .\accounts\templates\accounts\reset.html:31
 msgid "Save"
 msgstr "ذخیره"
-
-#: .\accounts\urls.py:5
-msgid "accounts"
-msgstr "حساب ها"
 
 #: .\accounts\views.py:23
 msgid "You successfully registered a user"
