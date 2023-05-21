@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 import requests
 import json
+from django.http import HttpResponse
 
 
-# ? sandbox merchant
+# sandbox merchant
 if settings.SANDBOX:
     sandbox = 'sandbox'
 else:
@@ -18,7 +19,7 @@ ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
 amount = 1000  # Rial / Required
 description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"  # Required
 # Important: need to edit for realy server.
-CallbackURL = 'http://127.0.0.1:8080/payment/verify/'
+CallbackURL = 'http://127.0.0.1:8000/payment/verify/'
 phone = None         # Optional
 email = None         # Optional
 order_id = None      # Optional
@@ -39,14 +40,18 @@ def send_request(request):
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
     try:
         response = requests.post(ZP_API_REQUEST, data=data, headers=headers, timeout=10)
-
         if response.status_code == 200:
             response = response.json()
             if response['Status'] == 100:
-                return {'status': True, 'url': ZP_API_STARTPAY + str(response['Authority']), 'authority': response['Authority']}
+                dt = {'status': True, 'url': ZP_API_STARTPAY +
+                      str(response['Authority']), 'authority': response['Authority']}
+                print("="*30)
+                print(dt)
+                print("="*30)
+                return redirect(f"{ZP_API_STARTPAY}{str(response['Authority'])}")
             else:
                 return {'status': False, 'code': str(response['Status'])}
-        return response
+        return HttpResponse(response)
 
     except requests.exceptions.Timeout:
         return {'status': False, 'code': 'timeout'}
@@ -54,11 +59,11 @@ def send_request(request):
         return {'status': False, 'code': 'connection error'}
 
 
-def verify(authority):
+def verify(request):
     data = {
         "MerchantID": settings.MERCHANT,
         "Amount": amount,
-        "Authority": authority,
+        "Authority": request.GET['Authority']
     }
     data = json.dumps(data)
     # set content length by data
@@ -68,7 +73,7 @@ def verify(authority):
     if response.status_code == 200:
         response = response.json()
         if response['Status'] == 100:
-            return {'status': True, 'RefID': response['RefID']}
+            return HttpResponse(str({'status': True, 'RefID': response['RefID']}))
         else:
-            return {'status': False, 'code': str(response['Status'])}
+            return HttpResponse(str({'status': False, 'code': str(response['Status'])}))
     return response

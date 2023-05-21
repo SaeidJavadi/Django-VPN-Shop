@@ -6,7 +6,8 @@ from vpn.models import vpnlist, Sidebar
 
 
 def home(request):
-    return render(request=request, template_name="vpn/home.html")
+    vpli = vpnlist.objects.all().order_by('row')
+    return render(request=request, template_name="vpn/home.html", context={'vpnall': vpli})
 
 
 def vpnbuy(request):

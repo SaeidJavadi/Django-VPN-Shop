@@ -278,12 +278,12 @@
                         <div class="row justify-content-center">
                             <div class="col-md-1"></div>
                             <div class="col-md-10 text-center">
-                                <button class="btn btn-lg btn-primary btn-block col-10"
+                                <a class="btn btn-lg btn-primary btn-block col-10"
                                         style="padding: 15px 15px 15px 15px"
                                         form="buy_submit"
                                         name="checkout-submit"
                                         type="submit"
-                                        value="checkout-submit">پرداخت</button>
+                                        value="checkout-submit" href="{% url 'payment:pay' %}" target="_blank">پرداخت</a>
                             </div>
                             <div class="col-md-1"></div>
                         </div>

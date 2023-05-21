@@ -187,5 +187,5 @@ CKEDITOR_CONFIGS = {
     }}
 
 # Payment gateway (ZarinPal)
-MERCHANT = "xxxxx-xxxx-xxxxx-xxxxxxx-xxxxxxxxxxxx"
+MERCHANT = "00000000-0000-0000-0000-000000000000"
 SANDBOX = True
