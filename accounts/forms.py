@@ -50,8 +50,8 @@ class LoginForm(forms.Form):
 
 class RegisterForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(
-        attrs={'class': 'form-control', 'dir': 'ltr', 'onChange': 'onChange()',
-               'minlength': '8'}))
+        attrs={'class': 'form-control', 'dir': 'ltr', 'onChange': 'onChange()'}))
+    #    ,'minlength': '8'}))
     password2 = forms.CharField(label='Password confirmation',
                                 widget=forms.PasswordInput(
                                     attrs={'class': 'form-control', 'dir': 'ltr', 'onChange': 'onChange()'}))
@@ -99,8 +99,7 @@ class EditProfileForm(forms.ModelForm):
 
 class ChangePassword(forms.Form):
     password1 = forms.CharField(label=_('Password'), widget=forms.PasswordInput(
-        attrs={'class': 'form-control', 'placeholder': 'Password', 'dir': 'ltr', 'onChange': 'onChange()',
-               'minlength': '8'}))
+        attrs={'class': 'form-control', 'placeholder': 'Password', 'dir': 'ltr', 'onChange': 'onChange()'}))
     password2 = forms.CharField(label=_('Password confirmation'),
                                 widget=forms.PasswordInput(
                                     attrs={'class': 'form-control', 'placeholder': 'Re-Enter Password',

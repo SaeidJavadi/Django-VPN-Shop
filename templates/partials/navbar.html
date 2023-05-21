@@ -10,8 +10,8 @@
         <img alt="logo"
              class="navbar-brand img-responsive"
              id="logo"
-             {% if SIDEBAR.logo %}
-                 src="media/{{ SIDEBAR.logo }}"
+             {% if SITECONF.logo %}
+                 src="media/{{ SITECONF.logo }}"
              {% else %}
                  src="{% static 'root/src/logo.png' %}"
              {% endif %}

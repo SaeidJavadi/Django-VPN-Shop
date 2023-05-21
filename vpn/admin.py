@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vpn.models import vpnlist, Sidebar, Order
+from vpn.models import vpnlist, Conf, Order
 
 
 @admin.register(vpnlist)
@@ -11,8 +11,8 @@ class vpnlistAdmin(admin.ModelAdmin):
     list_filter = ("row", "day", "price_t")
 
 
-@admin.register(Sidebar)
-class SidebarAdmin(admin.ModelAdmin):
+@admin.register(Conf)
+class ConfAdmin(admin.ModelAdmin):
     list_display = ("title",)
 
 

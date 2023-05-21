@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 20:56+0330\n"
+"POT-Creation-Date: 2023-05-21 22:51+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,51 +22,43 @@ msgstr ""
 msgid "ACCOUNTS"
 msgstr "حساب های کاربری"
 
-#: .\accounts\forms.py:94 .\accounts\models.py:34
-msgid "Username"
-msgstr "نام کاربری"
-
-#: .\accounts\forms.py:105
+#: .\accounts\forms.py:101
 msgid "Password"
 msgstr "رمزعبور"
 
-#: .\accounts\forms.py:108
+#: .\accounts\forms.py:103
 msgid "Password confirmation"
 msgstr "تکرار رمزعبور"
 
 #: .\accounts\models.py:9
-msgid "Users must have an username"
-msgstr "کاربران باید نام کاربری داشته باشند"
+msgid "Users must have an email"
+msgstr "حساب کاربری باید شامل ایمیل باشد"
 
-#: .\accounts\models.py:11
-msgid "Users must have an Phone Number"
-msgstr "کاربران باید یک شماره تلفن داشته باشند"
-
-#: .\accounts\models.py:19 .\accounts\models.py:38
-msgid "is_staff"
-msgstr "همکار"
-
-#: .\accounts\models.py:20 .\accounts\models.py:39
-msgid "is_superuser"
-msgstr "مدیر"
-
-#: .\accounts\models.py:21 .\accounts\models.py:37
-msgid "is_active"
-msgstr "فعال"
-
-#: .\accounts\models.py:35
+#: .\accounts\models.py:27
 msgid "email address"
 msgstr "آدرس ایمیل"
 
-#: .\accounts\models.py:36
+#: .\accounts\models.py:28
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: .\accounts\models.py:50
+#: .\accounts\models.py:29
+msgid "is_active"
+msgstr "فعال"
+
+#: .\accounts\models.py:30
+msgid "is_staff"
+msgstr "همکار"
+
+#: .\accounts\models.py:31
+msgid "is_superuser"
+msgstr "مدیر"
+
+#: .\accounts\models.py:42
 msgid "User"
 msgstr "کاربر"
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:43
 msgid "Users"
 msgstr "کاربران"
 
@@ -75,57 +67,54 @@ msgstr "کاربران"
 msgid "Profile"
 msgstr "پروفایل"
 
-#: .\accounts\templates\accounts\profile.html:29
+#: .\accounts\templates\accounts\profile.html:25
 #: .\accounts\templates\accounts\reset.html:5
 #: .\accounts\templates\accounts\reset.html:14
 msgid "Change Password"
 msgstr "تغییر رمزعبور"
 
-#: .\accounts\templates\accounts\profile.html:36
+#: .\accounts\templates\accounts\profile.html:32
 #: .\accounts\templates\accounts\reset.html:31
 msgid "Save"
 msgstr "ذخیره"
 
-#: .\accounts\views.py:23
+#: .\accounts\views.py:20
 msgid "You successfully registered a user"
-msgstr "شما با موفقیت یک کاربر را ثبت کردید"
+msgstr "حساب کاربری شما با موفقیت ایجاد شد"
 
-#: .\accounts\views.py:26
+#: .\accounts\views.py:23
 msgid "This Email is exists"
-msgstr "این ایمیل وجود دارد"
+msgstr "این ایمیل از قبل وجود دارد"
 
-#: .\accounts\views.py:28 .\accounts\views.py:30
-msgid "This Username is exists"
-msgstr "این نام کاربری وجود دارد"
-
-#: .\accounts\views.py:49
+#: .\accounts\views.py:42
 msgid "logged in successfully"
 msgstr "با موفقیت به حساب کاربری وارد شدید"
 
-#: .\accounts\views.py:52
-msgid "your username Or Password is wrong"
+#: .\accounts\views.py:45
+msgid "your email Or Password is wrong"
 msgstr "نام کاربری یا رمز عبور شما اشتباه است"
 
-#: .\accounts\views.py:54
-msgid "No account created with this username"
-msgstr "هیچ حساب کاربری با این نام کاربری ایجاد نشده است"
+#: .\accounts\views.py:47
+msgid "No account created with this email"
+msgstr "هیچ حساب کاربری با این ایمیل ایجاد نشده است"
 
-#: .\accounts\views.py:57
+#: .\accounts\views.py:50
 msgid "Please enter your information correctly"
 msgstr "لطفاً اطلاعات خود را به درستی وارد کنید"
 
-#: .\accounts\views.py:68
+#: .\accounts\views.py:61
 msgid "You Logged Out successfully"
 msgstr "شما با موفقیت از حساب کاربری خارج شدید"
 
-#: .\accounts\views.py:79
+#: .\accounts\views.py:72
 msgid "updated successfully"
 msgstr "با موفقیت بروزرسانی شد"
 
-#: .\accounts\views.py:82
+#: .\accounts\views.py:75
 msgid "Error updating your profile !!"
 msgstr "خطا در بروزرسانی پروفایل !!"
 
-#: .\accounts\views.py:101
+#: .\accounts\views.py:92
 msgid "Your password has been successfully changed"
 msgstr "رمزعبور شما با موفقیت تغییر کرد"
+

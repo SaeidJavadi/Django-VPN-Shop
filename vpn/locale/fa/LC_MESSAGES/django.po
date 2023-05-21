@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-20 20:50+0330\n"
+"POT-Creation-Date: 2023-05-21 22:51+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,61 +26,98 @@ msgstr "پنل مدیریت"
 msgid "Wellcome to Control Panel"
 msgstr "به پنل مدیریت خوش آمدید"
 
-#: .\vpn\apps.py:8
+#: .\vpn\apps.py:8 .\vpn\models.py:47
 msgid "VPN"
 msgstr "وی پی ان"
 
-#: .\vpn\models.py:8
+#: .\vpn\models.py:9
 msgid "VPN Title"
 msgstr "عنوان وی پی ان"
 
-#: .\vpn\models.py:9
+#: .\vpn\models.py:10
 msgid "Active Day"
 msgstr "روزهای فعال"
 
-#: .\vpn\models.py:10
+#: .\vpn\models.py:11
 msgid "Price Toman"
 msgstr "قیمت به تومان"
 
-#: .\vpn\models.py:11
+#: .\vpn\models.py:12
 msgid "Price Digital currency"
 msgstr "قیمت به ارز دیجیتال"
 
-#: .\vpn\models.py:12
+#: .\vpn\models.py:13
 msgid "Row"
 msgstr "ترتیب"
 
-#: .\vpn\models.py:13
+#: .\vpn\models.py:14
 msgid "Color"
 msgstr "رنگ"
 
-#: .\vpn\models.py:16
+#: .\vpn\models.py:17
 msgid "vpnlist"
 msgstr "لیست وی پی ان"
 
-#: .\vpn\models.py:17
+#: .\vpn\models.py:18
 msgid "vpnlists"
 msgstr "لیست وی پی ان ها"
 
-#: .\vpn\models.py:27
-msgid "title"
+#: .\vpn\models.py:28
+msgid "Title"
 msgstr "عنوان"
 
-#: .\vpn\models.py:28
-msgid "content"
-msgstr "محتوا"
-
-#: .\vpn\models.py:31
+#: .\vpn\models.py:29
 msgid "Sidebar"
 msgstr "سایدبار"
 
+#: .\vpn\models.py:30
+msgid "Head Text 1"
+msgstr "متن هد 1"
+
+#: .\vpn\models.py:31
+msgid "Head Text 2"
+msgstr "متن هد 2"
+
 #: .\vpn\models.py:32
-msgid "Sidebars"
-msgstr "سایدبار"
+msgid "Site Logo"
+msgstr "لوگو سایت"
+
+#: .\vpn\models.py:35
+msgid "Site Config"
+msgstr "تنظیمات سایت"
+
+#: .\vpn\models.py:36
+msgid "Site Configs"
+msgstr "تنظیمات سایت"
+
+#: .\vpn\models.py:46
+msgid "User"
+msgstr "کاربر"
+
+#: .\vpn\models.py:48
+msgid "Buy Date"
+msgstr "تاریخ خرید"
+
+#: .\vpn\models.py:49
+msgid "Status"
+msgstr "وضعیت"
+
+#: .\vpn\models.py:50
+msgid "Ref ID"
+msgstr "کد پیگیری"
+
+#: .\vpn\models.py:51
+msgid "Authority"
+msgstr "کد اعتبارسنجی"
+
+#: .\vpn\models.py:54
+msgid "Order"
+msgstr "سفارش"
+
+#: .\vpn\models.py:55
+msgid "Orders"
+msgstr "سفارش ها"
 
 #: .\vpn\templates\vpn\buy.html:5
 msgid "Buy VPN"
 msgstr "خرید وی پی ان"
-
-#~ msgid "vpn"
-#~ msgstr "وی پی ان"

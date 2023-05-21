@@ -24,22 +24,22 @@ class vpnlist(models.Model):
         return reverse("vpnlist_detail", kwargs={"pk": self.pk})
 
 
-class Sidebar(models.Model):
-    title = models.CharField(max_length=150, verbose_name=_("title"))
-    content = RichTextField(verbose_name=_("content"))
+class Conf(models.Model):
+    title = models.CharField(max_length=150, verbose_name=_("Title"))
+    sidebar = RichTextField(verbose_name=_("Sidebar"))
     headtext1 = models.TextField(verbose_name=_("Head Text 1"), null=True, blank=True)
     headtext2 = models.TextField(verbose_name=_("Head Text 2"), null=True, blank=True)
     logo = models.ImageField(upload_to="logo", null=True, blank=True, verbose_name=_("Site Logo"))
 
     class Meta:
-        verbose_name = _("Sidebar")
-        verbose_name_plural = _("Sidebars")
+        verbose_name = _("Site Config")
+        verbose_name_plural = _("Site Configs")
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("sidebar_detail", kwargs={"pk": self.pk})
+        return reverse("conf_detail", kwargs={"pk": self.pk})
 
 
 class Order(models.Model):

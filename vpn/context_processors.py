@@ -1,5 +1,5 @@
 from django.conf import settings
-from vpn.models import Sidebar
+from vpn.models import Conf
 
 
 def siteAddress(request):
@@ -7,5 +7,5 @@ def siteAddress(request):
 
 
 def sideBar(request):
-    sidbar = Sidebar.objects.last()
-    return {'SIDEBAR': sidbar}
+    conf = Conf.objects.last()
+    return {'SITECONF': conf}
