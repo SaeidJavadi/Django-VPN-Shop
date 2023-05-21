@@ -7,5 +7,5 @@ def siteAddress(request):
 
 
 def sideBar(request):
-    sidbar = Sidebar.objects.last().content
+    sidbar = Sidebar.objects.last()
     return {'SIDEBAR': sidbar}

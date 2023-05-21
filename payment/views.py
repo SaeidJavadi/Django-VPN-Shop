@@ -17,9 +17,9 @@ ZP_API_VERIFY = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentVerifica
 ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
 
 amount = 1000  # Rial / Required
-description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"  # Required
+description = settings.SITE_ADDRESS  # Required
 # Important: need to edit for realy server.
-CallbackURL = 'http://127.0.0.1:8000/payment/verify/'
+CallbackURL = f'{settings.SITE_ADDRESS}/payment/verify/'
 phone = None         # Optional
 email = None         # Optional
 order_id = None      # Optional

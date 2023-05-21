@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vpn.models import vpnlist, Sidebar
+from vpn.models import vpnlist, Sidebar, Order
 
 
 @admin.register(vpnlist)
@@ -14,3 +14,10 @@ class vpnlistAdmin(admin.ModelAdmin):
 @admin.register(Sidebar)
 class SidebarAdmin(admin.ModelAdmin):
     list_display = ("title",)
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ("user", "vpn", "authority", "refid", "status", "buydate")
+    search_fields = ("user", "vpn", "authority", "refid")
+    list_filter = ("vpn", "status", "buydate")

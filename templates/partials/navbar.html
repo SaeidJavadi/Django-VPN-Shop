@@ -10,7 +10,11 @@
         <img alt="logo"
              class="navbar-brand img-responsive"
              id="logo"
-             src="{% static 'root/src/logo.png' %}"
+             {% if SIDEBAR.logo %}
+                 src="media/{{ SIDEBAR.logo }}"
+             {% else %}
+                 src="{% static 'root/src/logo.png' %}"
+             {% endif %}
              style="width:60px" />
     </a>
     <button class="navbar-toggler"
