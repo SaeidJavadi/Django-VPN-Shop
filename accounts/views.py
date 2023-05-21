@@ -17,6 +17,7 @@ def userRegister(request):
             if not User.objects.filter(email=cd['email']).exists():
                 user = User.objects.create_user(phone=cd['phone'], email=cd['email'], password=cd['password1'])
                 user.save()
+                login(request, user)
                 messages.success(request, _("You successfully registered a user"), extra_tags="success")
                 return redirect('vpn:home')
             else:

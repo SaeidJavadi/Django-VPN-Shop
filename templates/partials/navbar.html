@@ -41,7 +41,7 @@
                 <li class="nav-item">
                     <a class="nav-item nav-link px-3"
                        style="color:green"
-                       href="{% url 'accounts:profile' %}">{% trans "Profile" %}</a>
+                       href="{% url 'accounts:profile' %}">{% trans "Profile" %}({{ request.user.get_username }})</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-item nav-link px-3"
