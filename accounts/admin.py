@@ -14,7 +14,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email',)
+        fields = ( 'email',)
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -37,17 +37,17 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'is_active', 'is_staff')
+        fields = ( 'email', 'password', 'is_active', 'is_staff')
 
 
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('username', 'email', 'is_active', 'is_staff', 'is_superuser')
+    list_display = ( 'email', 'is_active', 'is_staff', 'is_superuser')
     # list_editable = ('is_staff', 'is_active')
     list_filter = ('is_staff', 'groups')
     fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
+        (None, {'fields': ( 'email', 'password')}),
         ('Permissions', {'fields': ('is_staff',)}),
         ('Group Permissions', {
             'fields': ('is_active', 'is_superuser', 'groups', 'user_permissions'),
@@ -56,14 +56,14 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2'),
+            'fields': ( 'email', 'password1', 'password2'),
         }),
         ('Group Permissions', {
             'fields': ('is_active', 'is_superuser', 'groups', 'user_permissions'),
         })
     )
-    search_fields = ('username', 'email',)
-    ordering = ('username', 'email',)
+    search_fields = ( 'email',)
+    ordering = ( 'email',)
     filter_horizontal = ('groups', 'user_permissions',)
 
 

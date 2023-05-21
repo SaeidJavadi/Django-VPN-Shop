@@ -14,16 +14,12 @@
       <form action="#" method="post">
         {% csrf_token %}
         <div class="user-box">
-          {{ form.username }}
-          <label style="text-align: right;">نام کاربری</label>
+          {{ form.email }}
+          <label>ایمیل</label>
         </div>
         <div class="user-box">
           {{ form.phone }}
           <label>شماره تلفن</label>
-        </div>
-        <div class="user-box">
-          {{ form.email }}
-          <label>ایمیل</label>
         </div>
         <div class="user-box">
           {{ form.password1 }}
@@ -46,4 +42,5 @@
     </div>
   </div>
   <script src="{% static "accounts/js/fieldValidite.js" %}" type="text/javascript"></script>
+</br>
 {% endblock body %}

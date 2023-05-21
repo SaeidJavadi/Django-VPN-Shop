@@ -11,7 +11,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'phone', 'email', 'is_active', 'is_staff')
+        fields = ('phone', 'email', 'is_active', 'is_staff')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -33,16 +33,16 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'phone', 'email', 'is_active', 'is_staff')
+        fields = ('phone', 'email', 'is_active', 'is_staff')
 
     def clean_password(self):
         return self.initial["password"]
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'dir': 'ltr'}),   # 'placeholder': 'Username'
-        label='Username')
+    email = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'dir': 'ltr'}),   # 'placeholder': 'Email'
+        label='Email')
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'dir': 'ltr'}),  # 'placeholder': 'Password'
         label='Password')
@@ -58,16 +58,15 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'phone', 'email')
+        fields = ('phone', 'email')
 
         widgets = {
-            'username': forms.TextInput(
+            'email': forms.EmailInput(
                 attrs={'class': 'form-control'}),
             'phone': forms.NumberInput(
-                attrs={'class': 'form-control', 'placeholder': '09 - - - - - - - - -', 'type': 'tel', 'maxlength': '11',
-                       'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)'}),
-            'email': forms.EmailInput(
-                attrs={'class': 'form-control'})}
+                attrs={'class': 'form-control', 'placeholder': '09 --------- (اختیاری)', 'type': 'tel', 'maxlength': '11',
+                       'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)'})
+        }
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -88,15 +87,12 @@ class RegisterForm(forms.ModelForm):
 class EditProfileForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username', 'email', 'phone',)
+        fields = ('email', 'phone',)
         widgets = {
-            'username': forms.TextInput(
-                attrs={'class': 'form-control', 'placeholder': _('Username'), 'invalid': 'fuulNameJS()',
-                       'lang': 'fa'}),
             'email': forms.EmailInput(
-                attrs={'class': 'form-control', 'placeholder': 'example@gmail.com', 'dir': 'ltr'}),
+                attrs={'class': 'form-control', 'placeholder': 'example@gmail.com', 'dir': 'ltr', 'readonly': 'true'}),
             'phone': forms.NumberInput(
-                attrs={'class': 'form-control', 'placeholder': '09 - - - - - - - - -', 'type': 'tel', 'maxlength': '11',
+                attrs={'class': 'form-control', 'placeholder': '09 --------- (اختیاری)', 'type': 'tel', 'maxlength': '11',
                        'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)'}),
         }
 
