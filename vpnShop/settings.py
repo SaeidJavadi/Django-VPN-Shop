@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'api.apps.ApiConfig',
     'vpn.apps.VpnConfig',
+    'payment.apps.PaymentConfig',
     # packges
     'rest_framework',
     'rest_framework.authtoken',
@@ -184,3 +185,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
     }}
+
+# Payment gateway (ZarinPal)
+MERCHANT = "xxxxx-xxxx-xxxxx-xxxxxxx-xxxxxxxxxxxx"
+SANDBOX = True

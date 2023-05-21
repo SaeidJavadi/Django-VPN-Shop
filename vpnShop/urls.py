@@ -14,7 +14,7 @@ urlpatterns = [
          PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('', include('vpn.urls', namespace='vpn')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-
+    path('payment/', include('payment.urls', namespace='payment'))
 ]
 
 
