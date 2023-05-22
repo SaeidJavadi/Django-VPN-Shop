@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% trans "Buy VPN" %}
+{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'vpn/css/buypg.css' %}" />
+{% endblock head %}
+{% block body %}
+    <style>
+        table,
+        th,
+        td {
+            border: 4px solid black;
+            border-color: #96D4D4;
+            margin: auto;
+            width: 70%;
+            padding: 10px;
+            text-align: center;
+            text-weghit: bold
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-8 rtl">
+            <p style="text-align:center;">
+                <form action="buy" method="POST">
+                    {% csrf_token %}
+                    <h2 style="text-align:center;padding: 10px 0 10px 0;color:#ffff;">سفارش شما</h2>
+                    <table>
+                        <tr style="color:#ff8b00;">
+                            <th>وی پی ان درخواستی شما</th>
+                            <th>مدت اعتبار</th>
+                            <th>قیمت (تومان)</th>
+                        </tr>
+                        <tr>
+                            <th>{{ vpn.title }}</th>
+                            <th>{{ vpn.day }} (روز)</th>
+                            <th>{{ vpn.price_t }}</th>
+                        </tr>
+                    </table>
+                </br>
+                <input name="vvpnid" type="radio" value="{{ vpn.id }}" checked hidden="true" />
+                <div class="row justify-content-center">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 text-center">
+                        <button class="btn btn-lg btn-success btn-block col-8"
+                                style="padding: 10px 10px 10px 10px"
+                                type="submit">تایید و پرداخت</button>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </p>
+    </div>
+    {% include "vpn/sidebar.html" %}
+</div>
+{% endblock body %}

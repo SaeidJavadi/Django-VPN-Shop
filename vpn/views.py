@@ -12,9 +12,13 @@ def home(request):
 
 def vpnbuy(request):
     if request.method == "POST":
-        vpnid = request.POST.get('vpnid')
-        v = vpnlist.objects.get(id=vpnid)
-        return HttpResponse(str(v.title + "-"+v.price_t+"-"+f'{v.day}'+"-"+f'{v.id}'))
+        vpnid = request.POST.get('vvpnid')
+        return redirect('payment:pay', vid=vpnid)
     else:
         vpli = vpnlist.objects.all().order_by('row')
         return render(request=request, template_name="vpn/buy.html", context={'vpnall': vpli})
+
+
+def buyVerify(request):
+    v = vpnlist.objects.get(id=request.POST.get('vpnid'))
+    return render(request=request, template_name="vpn/verify.html", context={'vpn': v})

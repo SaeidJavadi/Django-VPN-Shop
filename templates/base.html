@@ -92,12 +92,14 @@
             }
         </script>
         {% include "partials/navbar.html" %}
-    <div class="container">
-        {% block body %}
-        {% endblock body %}
-    </div>
-    <div class="container d-flex align-items-center justify-content-center">{% include "partials/messages.html" %}</div>
-</br>
+        <div class="container">
+            <div class="row">
+                {% block body %}
+                {% endblock body %}
+            </div>
+        </div>
+        <div class="container d-flex align-items-center justify-content-center">{% include "partials/messages.html" %}</div>
+    </br>
 </br>
 {% comment %} {% include "partials/footer.html" %} {% endcomment %}
 </body>

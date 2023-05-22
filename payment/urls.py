@@ -3,6 +3,6 @@ from payment import views
 
 app_name = 'payment'
 urlpatterns = [
-    path('pay/', views.send_request, name='pay'),
+    path('pay/<int:vid>/', views.send_request, name='pay'),
     path('verify/', views.verify, name='verify'),
 ]

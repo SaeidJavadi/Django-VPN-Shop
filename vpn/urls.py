@@ -1,8 +1,9 @@
 from django.urls import path
-from vpn.views import home, vpnbuy
+from vpn.views import home, vpnbuy, buyVerify
 
 app_name = 'vpn'
 urlpatterns = [
     path('', home, name='home'),
     path('buy', vpnbuy, name='buy'),
+    path('buyVerify', buyVerify, name='buyVerify'),
 ]

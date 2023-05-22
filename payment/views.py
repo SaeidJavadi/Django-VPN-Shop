@@ -28,14 +28,18 @@ order_id = None      # Optional
 
 
 @login_required()
-def send_request(request):
+def send_request(request, vid):
+    print("="*30)
+    print(vid, request.user.email)
+    print("="*30)
+    vpn = vpnlist.objects.get(id=vid)
     data = {
         "MerchantID": settings.MERCHANT,
-        "Amount": amount,
+        "Amount": vpn.price_t,
         "Description": description,
         "CallbackURL": CallbackURL,
         "Phone": phone,
-        "email": email,
+        "email": request.user.email,
         "order_id": order_id
     }
     data = json.dumps(data)
