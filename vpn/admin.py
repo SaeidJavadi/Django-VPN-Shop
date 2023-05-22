@@ -4,7 +4,7 @@ from vpn.models import vpnlist, Conf, Order
 
 @admin.register(vpnlist)
 class vpnlistAdmin(admin.ModelAdmin):
-    list_display = ("title", "color", "row", "price_c", "price_t", "day")
+    list_display = ("id", "title", "color", "row", "price_c", "price_t", "day")
     list_editable = ("row", "day")
     list_display_links = ("title",)
     search_fields = ("title", "day")

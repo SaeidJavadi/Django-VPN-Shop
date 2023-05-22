@@ -178,9 +178,8 @@
                     width: 100%;
                 }
             </style>
-            {% csrf_token %}
-            <form class="form_buy"
-                  id="buy_submit"                 method="post"                  style="margin-top:25px">
+            <form class="form_buy" id="buy_submit" action="buy" method="post" style="margin-top:25px">
+                            {% csrf_token %}
                 <div class="form-group" id="buy_sign_up">
                     <table class="form_buy">
                         <tbody>
@@ -219,18 +218,22 @@
                                                             flex-direction: row;
                                                             justify-content: right;
                                                             align-items: center">
-                                                    <input id="inputradio_{{ forloop.counter0 }}"
-                                                           name="selected_service"
+                                                    <input id="{{ vpn.id }}"
+                                                           name="vpnid"
                                                            onclick="reply_click({{ vpn.price_t }})"
                                                            type="radio"
-                                                           value="{{ vpn.id }}" />
-                                                    <label for="inputradio_{{ forloop.counter0 }}"
+                                                           value="{{ vpn.id }}" 
+                                                           {% if forloop.counter0 == 0 %}
+                                                           checked="checked"
+                                                           {% endif %}
+                                                           />
+                                                    <label for="vpn.id"
                                                            onclick="reply_click({{ vpn.price_t }})"
                                                            style="margin-right: 5px;
                                                                   text-align: right;
                                                                   clear: both;
                                                                   float:left;
-                                                                  color: {{ vpn.color }};">
+                                                                  color:{{ vpn.color }};">
                                                         {{ vpn.title }} - {{ vpn.price_t }} - {{ vpn.day|daytomo }} ماهه
                                                     </label>
                                                 </div>
@@ -278,12 +281,12 @@
                         <div class="row justify-content-center">
                             <div class="col-md-1"></div>
                             <div class="col-md-10 text-center">
-                                <a class="btn btn-lg btn-primary btn-block col-10"
+                                <button class="btn btn-lg btn-primary btn-block col-10"
                                         style="padding: 15px 15px 15px 15px"
                                         form="buy_submit"
                                         name="checkout-submit"
                                         type="submit"
-                                        value="checkout-submit" href="{% url 'payment:pay' %}" target="_blank">پرداخت</a>
+                                        value="checkout-submit" target="_blank">پرداخت</button>
                             </div>
                             <div class="col-md-1"></div>
                         </div>

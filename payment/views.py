@@ -3,7 +3,9 @@ from django.conf import settings
 import requests
 import json
 from django.http import HttpResponse
-
+from django.contrib.auth.decorators import login_required
+from vpn.models import vpnlist, Order
+from accounts.models import User
 
 # sandbox merchant
 if settings.SANDBOX:
@@ -25,6 +27,7 @@ email = None         # Optional
 order_id = None      # Optional
 
 
+@login_required()
 def send_request(request):
     data = {
         "MerchantID": settings.MERCHANT,
@@ -52,7 +55,6 @@ def send_request(request):
             else:
                 return {'status': False, 'code': str(response['Status'])}
         return HttpResponse(response)
-
     except requests.exceptions.Timeout:
         return {'status': False, 'code': 'timeout'}
     except requests.exceptions.ConnectionError:
@@ -69,7 +71,6 @@ def verify(request):
     # set content length by data
     headers = {'content-type': 'application/json', 'content-length': str(len(data))}
     response = requests.post(ZP_API_VERIFY, data=data, headers=headers)
-
     if response.status_code == 200:
         response = response.json()
         if response['Status'] == 100:
