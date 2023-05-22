@@ -3,111 +3,6 @@
 {% load basetags %}
 <div class="row">
     <div class="col-md-8 rtl">
-        <div class="modal hide fade"
-             data-backdrop="static"
-             data-keyboard="false"
-             id="cryptopaymentModal">
-            <div class="modal-dialog"
-                 data-backdrop="static"
-                 data-keyboard="false"
-                 role="document">
-                <div class="modal-dark modal-content"
-                     data-backdrop="static"
-                     data-keyboard="false">
-                    <div class="modal-body"
-                         data-backdrop="static"
-                         data-keyboard="false"
-                         style="text-align:left;
-                                direction:ltr;
-                                background-color: #00000000">
-                        <div class="alert alert-secondary"
-                             id="smicryptopay"
-                             style="text-align:left;
-                                    direction:ltr;
-                                    background-color: #00000000">
-                            <div class="progress" id="p1">
-                                <div aria-valuemax="100"
-                                     aria-valuemin="0"
-                                     aria-valuenow="100"
-                                     class="progress-bar progress-bar-striped progress-bar-animated"
-                                     id="progressbarwaittime"
-                                     role="progressbar"
-                                     style="width: 75%"></div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <img id="crypto_qrcode_img" src="#" />
-                            </div>
-                            <div class="row">
-                                <div class="text-warning">
-                                    <p id="cryptodesc"
-                                       style="direction: rtl;
-                                              text-align: right;
-                                              font-size: small"></p>
-                                </div>
-                            </div>
-                            <div class="input-group mb-3" id="p3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" style="font-size:smaller;">Amount:</span>
-                                </div>
-                                <input aria-describedby="Amount"
-                                       aria-label="Amount"
-                                       class="form-control"
-                                       disabled=""
-                                       id="crypto_amount"
-                                       placeholder="Amount"
-                                       style="font-size:smaller"
-                                       type="text" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-primary"
-                                            onclick="CopyCB('amount')"
-                                            style="font-size:smaller"
-                                            type="button">Copy</button>
-                                </div>
-                            </div>
-                            <div class="input-group mb-3" id="p4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" style="font-size:smaller;">Address:</span>
-                                </div>
-                                <input aria-describedby="Address"
-                                       aria-label="Address"
-                                       class="form-control"
-                                       disabled=""
-                                       id="crypto_address"
-                                       placeholder="Address"
-                                       style="font-size:smaller"
-                                       type="text" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-primary"
-                                            onclick="CopyCB('address')"
-                                            style="font-size:smaller"
-                                            type="button">Copy</button>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <form action="#" id="formpost" method="POST">
-                                    <input name="csrfmiddlewaretoken"
-                                           type="hidden"
-                                           value="c1hCuY8c96mibu8Vyn97FGTYxYOT9hMSuXDem3hTe2Cnt9FJYTntQlFwWeMn0eNx" />
-                                    <input form="formpost" name="data" type="hidden" value="" />
-                                    <button class="btn btn-lg btn-block btn-outline-primary"
-                                            form="formpost"
-                                            id="cryptostatusbtn"
-                                            name="btn-data"
-                                            style="white-space:normal;
-                                                   font-size: medium"
-                                            type="button">
-                                        <span aria-hidden="true"
-                                              class="spinner-border"
-                                              role="status"
-                                              style="font-size: medium"></span>  <span id="statustext">Loading...</span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div style="margin-top:25px;">
             <p class="rtl center"
                id="blink1"
@@ -178,8 +73,12 @@
                     width: 100%;
                 }
             </style>
-            <form class="form_buy" id="buy_submit" action="buy" method="post" style="margin-top:25px">
-                            {% csrf_token %}
+            <form class="form_buy"
+                  id="buy_submit"
+                  action="buy"
+                  method="post"
+                  style="margin-top:25px">
+                {% csrf_token %}
                 <div class="form-group" id="buy_sign_up">
                     <table class="form_buy">
                         <tbody>
@@ -212,33 +111,31 @@
                                        id="cardtable">
                                     <tbody>
                                         {% for vpn in vpns %}
-                                        <tr id="trproduct_{{ forloop.counter0 }}" onclick="reply_click({{ vpn.price_t }})">
-                                            <td class="None">
-                                                <div style="display:flex;
-                                                            flex-direction: row;
-                                                            justify-content: right;
-                                                            align-items: center">
-                                                    <input id="{{ vpn.id }}"
-                                                           name="vpnid"
-                                                           onclick="reply_click({{ vpn.price_t }})"
-                                                           type="radio"
-                                                           value="{{ vpn.id }}" 
-                                                           {% if forloop.counter0 == 0 %}
-                                                           checked="checked"
-                                                           {% endif %}
-                                                           />
-                                                    <label for="vpn.id"
-                                                           onclick="reply_click({{ vpn.price_t }})"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
-                                                                  clear: both;
-                                                                  float:left;
-                                                                  color:{{ vpn.color }};">
-                                                        {{ vpn.title }} - {{ vpn.price_t }} - {{ vpn.day|daytomo }} ماهه
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                            <tr id="trproduct_{{ forloop.counter0 }}"
+                                                onclick="reply_click({{ forloop.counter0 }},{{ vpn.price_t }})">
+                                                <td class="None">
+                                                    <div style="display:flex;
+                                                                flex-direction: row;
+                                                                justify-content: right;
+                                                                align-items: center">
+                                                        <input id="vpli_{{ vpn.id }}"
+                                                               name="vpnid"
+                                                               onclick="reply_click({{ forloop.counter0 }},{{ vpn.price_t }} )"
+                                                               type="radio"
+                                                               value="{{ vpn.id }}"
+                                                               {% if forloop.counter0 == 0 %}checked="checked"{% endif %} />
+                                                        <label for="vpli_{{ vpn.id }}"
+                                                               onclick="reply_click({{ forloop.counter0 }},{{ vpn.price_t }} )"
+                                                               style="margin-right: 5px;
+                                                                      text-align: right;
+                                                                      clear: both;
+                                                                      float:left;
+                                                                      color:{{ vpn.color }}">
+                                                            {{ vpn.title }} - {{ vpn.price_t }} - {{ vpn.day|daytomo }} ماهه
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         {% endfor %}
                                     </tbody>
                                 </table>
@@ -286,7 +183,8 @@
                                         form="buy_submit"
                                         name="checkout-submit"
                                         type="submit"
-                                        value="checkout-submit" target="_blank">پرداخت</button>
+                                        value="checkout-submit"
+                                        target="_blank">پرداخت</button>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
