@@ -21,7 +21,7 @@ ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
 amount = 1000  # Rial / Required
 description = settings.SITE_ADDRESS  # Required
 # Important: need to edit for realy server.
-CallbackURL = f'{settings.SITE_ADDRESS}/payment/verify/'
+CallbackURL = f'http://{settings.SITE_ADDRESS}/payment/verify/'
 phone = None         # Optional
 email = None         # Optional
 order_id = None      # Optional
@@ -29,13 +29,11 @@ order_id = None      # Optional
 
 @login_required()
 def send_request(request, vid):
-    print("="*30)
-    print(vid, request.user.email)
-    print("="*30)
     vpn = vpnlist.objects.get(id=vid)
+    amount = vpn.price_t
     data = {
         "MerchantID": settings.MERCHANT,
-        "Amount": vpn.price_t,
+        "Amount": amount,
         "Description": description,
         "CallbackURL": CallbackURL,
         "Phone": phone,
@@ -52,9 +50,6 @@ def send_request(request, vid):
             if response['Status'] == 100:
                 dt = {'status': True, 'url': ZP_API_STARTPAY +
                       str(response['Authority']), 'authority': response['Authority']}
-                print("="*30)
-                print(dt)
-                print("="*30)
                 return redirect(f"{ZP_API_STARTPAY}{str(response['Authority'])}")
             else:
                 return {'status': False, 'code': str(response['Status'])}
@@ -66,19 +61,28 @@ def send_request(request, vid):
 
 
 def verify(request):
-    data = {
-        "MerchantID": settings.MERCHANT,
-        "Amount": amount,
-        "Authority": request.GET['Authority']
-    }
-    data = json.dumps(data)
-    # set content length by data
-    headers = {'content-type': 'application/json', 'content-length': str(len(data))}
-    response = requests.post(ZP_API_VERIFY, data=data, headers=headers)
-    if response.status_code == 200:
-        response = response.json()
-        if response['Status'] == 100:
-            return HttpResponse(str({'status': True, 'RefID': response['RefID']}))
-        else:
-            return HttpResponse(str({'status': False, 'code': str(response['Status'])}))
-    return response
+    print("="*30)
+    print("callbakStatus: ", request.GET['Status'])
+    print("="*30)
+    try:
+        data = {
+            "MerchantID": settings.MERCHANT,
+            "Amount": amount,
+            "Authority": request.GET['Authority']
+        }
+        data = json.dumps(data)
+        # set content length by data
+        headers = {'content-type': 'application/json', 'content-length': str(len(data))}
+        response = requests.post(ZP_API_VERIFY, data=data, headers=headers)
+        if response.status_code == 200:
+            response = response.json()
+            print("="*30)
+            print("Response: ", response)
+            print("="*30)
+            if response['Status'] == 100:
+                return HttpResponse(str({'status': True, 'RefID': response['RefID']}))
+            else:
+                return HttpResponse(str({'status': False, 'code': str(response['Status'])}))
+        return response
+    except:
+        return HttpResponse("Error !")

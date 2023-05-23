@@ -38,16 +38,17 @@
                 </li>
             {% endif %}
             {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                    <a class="nav-item nav-link px-3"
+                       style="color:red"
+                       href="{% url 'accounts:logout' %}">خروج</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-item nav-link px-3"
                        style="color:green"
                        href="{% url 'accounts:profile' %}">{% trans "Profile" %} <small style="font-size:12px;">({{ request.user.get_username }})</small></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link px-3"
-                       style="color:red"
-                       href="{% url 'accounts:logout' %}">خروج</a>
-                </li>
+
             {% endif %}
             {% if not request.user.is_authenticated %}
                 <li class="nav-item">
@@ -65,17 +66,11 @@
                 <a class="nav-item nav-link px-3" href="{% url 'vpn:buy' %}">خرید</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link px-3" href="#">راهنما کانکشن</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-item nav-link px-3" href="#">راهنما و دانلود کانکشن</a>
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link px-3" href="#">پشتیبانی</a>
             </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-item nav-link px-3" href="#">سرورها</a>
         </li>
     </ul>
 </div>

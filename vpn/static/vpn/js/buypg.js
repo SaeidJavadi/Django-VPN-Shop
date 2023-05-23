@@ -1,7 +1,7 @@
 var extra_wage = 3;
 var discount_rate = 0;
 var $radios = $('input:radio[name=selected_service]');
-var buy_option_selected = 1;
+var buy_option_selected = 0;
 
 
 function pf(x) {
