@@ -30,6 +30,7 @@ class Conf(models.Model):
     headtext1 = models.TextField(verbose_name=_("Head Text 1"), null=True, blank=True)
     headtext2 = models.TextField(verbose_name=_("Head Text 2"), null=True, blank=True)
     logo = models.ImageField(upload_to="logo", null=True, blank=True, verbose_name=_("Site Logo"))
+    buynote = models.TextField(verbose_name=_("Buy Note"),null=True, blank=True)
 
     class Meta:
         verbose_name = _("Site Config")
