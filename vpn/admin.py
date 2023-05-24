@@ -30,5 +30,5 @@ class HelpAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ("phone", "email", "name")
+    list_display = ("phone", "email", "name", "status")
     list_editable = ("status",)
