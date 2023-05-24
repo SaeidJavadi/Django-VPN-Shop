@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% trans "Buy VPN" %}
+{% endblock title %}
+{% block body %}
+    <div class="col-md-8 rtl"  style="text-align:right;">
+        <h2>آموزش ها</h2>
+        <div class="list-group">
+                    {% for help in object_list %}
+            <a href="{% url 'vpn:help' pk=help.id %}" class="list-group-item list-group-item-action" style="background-color:#f3f9c2;">{{ help.title }}</a>
+        {% endfor %}
+</div>
+    </div>
+    {% include "vpn/sidebar.html" %}
+{% endblock body %}

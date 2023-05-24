@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vpn.models import vpnlist, Conf, Order
+from vpn.models import vpnlist, Conf, Order, Help
 
 
 @admin.register(vpnlist)
@@ -21,3 +21,8 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ("user", "vpn", "authority", "refid", "status", "buydate")
     search_fields = ("user", "vpn", "authority", "refid")
     list_filter = ("vpn", "status", "buydate")
+
+
+@admin.register(Help)
+class HelpAdmin(admin.ModelAdmin):
+    list_display = ("content", "title")

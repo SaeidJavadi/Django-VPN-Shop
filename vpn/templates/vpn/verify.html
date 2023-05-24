@@ -4,9 +4,6 @@
 {% block title %}
     {% trans "Buy VPN" %}
 {% endblock title %}
-{% block head %}
-    <link rel="stylesheet" href="{% static 'vpn/css/buypg.css' %}" />
-{% endblock head %}
 {% block body %}
     <style>
         table,
@@ -21,7 +18,6 @@
             text-weghit: bold
         }
     </style>
-    <div class="row">
         <div class="col-md-8 rtl">
             <p style="text-align:center;">
                 <form action="buy" method="POST">
@@ -51,8 +47,7 @@
                     <div class="col-md-2"></div>
                 </div>
             </form>
-        </p>
-    </div>
+            </p>
+        </div>
     {% include "vpn/sidebar.html" %}
-</div>
 {% endblock body %}

@@ -59,3 +59,20 @@ class Order(models.Model):
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})
+
+
+class Help(models.Model):
+    title = models.CharField(max_length=150, verbose_name=_("Title"))
+    content = RichTextField(verbose_name=_("Content"))
+    image = models.ImageField(upload_to="help", verbose_name=_("Image"), null=True, blank=True)
+    file = models.FileField(upload_to="dl", max_length=100, null=True, blank=True, verbose_name=_("File"))
+
+    class Meta:
+        verbose_name = _("Help")
+        verbose_name_plural = _("Helps")
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("Help_detail", kwargs={"pk": self.pk})
