@@ -76,3 +76,19 @@ class Help(models.Model):
 
     def get_absolute_url(self):
         return reverse("Help_detail", kwargs={"pk": self.pk})
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=120, verbose_name=_('Name'))
+    email = models.EmailField(verbose_name=_('Email'))
+    phone = models.IntegerField(verbose_name=_('Phone Number'), null=True, blank=True)
+    message = models.TextField(verbose_name=_('Message'))
+    status = models.CharField(max_length=60, verbose_name=_('Status'),
+                              choices=(('Read', _('Read')), ('UnRead', _('UnRead'))), default='UnRead')
+
+    class Meta:
+        verbose_name = _('Contact us')
+        verbose_name_plural = _('Contact us')
+
+    def __str__(self):
+        return self.email

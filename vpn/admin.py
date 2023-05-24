@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vpn.models import vpnlist, Conf, Order, Help
+from vpn.models import vpnlist, Conf, Order, Help, Contact
 
 
 @admin.register(vpnlist)
@@ -26,3 +26,9 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(Help)
 class HelpAdmin(admin.ModelAdmin):
     list_display = ("content", "title")
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ( "status", "phone", "email", "name")
+    list_editable = ("status",)

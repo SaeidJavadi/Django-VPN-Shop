@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% trans "Buy VPN" %}
+{% endblock title %}
+{% block body %}
+    <div class="col-md-8 rtl">
+<div class="section inner_page_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="full" style="text-align: center;direction: rtl">
+                    <h3>ارتباط با ما</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Banner -->
+<!-- section -->
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row margin-top_30">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 margin-top_30" style="direction: rtl">
+                <div class="contact-block">
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.name }}
+                                    {{ form.name.errors }}
+                                    <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.email }}
+                                    {{ form.email.errors }}
+                                    <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.phone }}
+                                    {{ form.phone.errors }}
+                                    <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form.message }}
+                                    {{ form.message.errors }}
+                                    <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
+                                </div>
+                                <div class="submit-button text-center margin-top_30">
+                                    <button class="btn btn-success margin-top_30" id="submit" type="submit">ارسال پیام</button>
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+    </div>
+    {% include "vpn/sidebar.html" %}
+{% endblock body %}

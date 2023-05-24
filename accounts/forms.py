@@ -62,7 +62,9 @@ class RegisterForm(forms.ModelForm):
 
         widgets = {
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control',  'type': 'tel', 'dir': 'ltr'})
+            'phone': forms.NumberInput(
+                attrs={'class': 'form-control', 'type': 'tel', 'maxlength': '11',
+                       'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)', 'required': 'false'}),
         }
 
     def clean_password2(self):
@@ -90,7 +92,7 @@ class EditProfileForm(forms.ModelForm):
                 attrs={'class': 'form-control', 'placeholder': 'example@gmail.com', 'dir': 'ltr', 'readonly': 'true'}),
             'phone': forms.NumberInput(
                 attrs={'class': 'form-control', 'type': 'tel', 'maxlength': '11',
-                       'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)'}),
+                       'minlength': '11', 'dir': 'ltr', 'onkeypress': 'return isNumber(event)', 'required': 'false'}),
         }
 
 
