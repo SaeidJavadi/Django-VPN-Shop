@@ -40,7 +40,7 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.success(request, _('Your message has been successfully sent'), extra_tags='alert alert-success')
-            return redirect('base:contact')
+            return redirect('vpn:contact')
         else:
             messages.success(request, _('An error occurred while sending your message'),
                              extra_tags='alert alert-warning')

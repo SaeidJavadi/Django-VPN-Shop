@@ -97,8 +97,14 @@
                 {% block body %}
                 {% endblock body %}
             </div>
+            <div class="row">
+                <div class="col-m-1"></div>
+                <dv class="col-m-1"></dv>
+                <div class="col-m-10 d-flex align-items-center text-center justify-content-center"
+                     style="text-align:center">{% include "partials/messages.html" %}</div>
+                <div class="col-m-1"></div>
+            </div>
         </div>
-        <div class="container d-flex align-items-center justify-content-center">{% include "partials/messages.html" %}</div>
     </br>
 </br>
 {% comment %} {% include "partials/footer.html" %} {% endcomment %}
