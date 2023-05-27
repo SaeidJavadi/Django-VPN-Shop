@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-21 22:51+0330\n"
+"POT-Creation-Date: 2023-05-27 21:21+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "ACCOUNTS"
 msgstr "حساب های کاربری"
 
-#: .\accounts\forms.py:101
+#: .\accounts\forms.py:100
 msgid "Password"
 msgstr "رمزعبور"
 
-#: .\accounts\forms.py:103
+#: .\accounts\forms.py:102
 msgid "Password confirmation"
 msgstr "تکرار رمزعبور"
 
@@ -78,43 +78,42 @@ msgstr "تغییر رمزعبور"
 msgid "Save"
 msgstr "ذخیره"
 
-#: .\accounts\views.py:20
+#: .\accounts\views.py:21
 msgid "You successfully registered a user"
 msgstr "حساب کاربری شما با موفقیت ایجاد شد"
 
-#: .\accounts\views.py:23
+#: .\accounts\views.py:24
 msgid "This Email is exists"
 msgstr "این ایمیل از قبل وجود دارد"
 
-#: .\accounts\views.py:42
+#: .\accounts\views.py:43
 msgid "logged in successfully"
 msgstr "با موفقیت به حساب کاربری وارد شدید"
 
-#: .\accounts\views.py:45
+#: .\accounts\views.py:46
 msgid "your email Or Password is wrong"
 msgstr "نام کاربری یا رمز عبور شما اشتباه است"
 
-#: .\accounts\views.py:47
+#: .\accounts\views.py:48
 msgid "No account created with this email"
 msgstr "هیچ حساب کاربری با این ایمیل ایجاد نشده است"
 
-#: .\accounts\views.py:50
+#: .\accounts\views.py:51
 msgid "Please enter your information correctly"
 msgstr "لطفاً اطلاعات خود را به درستی وارد کنید"
 
-#: .\accounts\views.py:61
+#: .\accounts\views.py:62
 msgid "You Logged Out successfully"
 msgstr "شما با موفقیت از حساب کاربری خارج شدید"
 
-#: .\accounts\views.py:72
+#: .\accounts\views.py:73
 msgid "updated successfully"
 msgstr "با موفقیت بروزرسانی شد"
 
-#: .\accounts\views.py:75
+#: .\accounts\views.py:76
 msgid "Error updating your profile !!"
 msgstr "خطا در بروزرسانی پروفایل !!"
 
-#: .\accounts\views.py:92
+#: .\accounts\views.py:93
 msgid "Your password has been successfully changed"
 msgstr "رمزعبور شما با موفقیت تغییر کرد"
-

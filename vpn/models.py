@@ -31,7 +31,7 @@ class Conf(models.Model):
     headtext2 = models.TextField(verbose_name=_("Head Text 2"), null=True, blank=True)
     logo = models.ImageField(upload_to="logo", null=True, blank=True, verbose_name=_("Site Logo"))
     buynote = models.TextField(verbose_name=_("Buy Note"), null=True, blank=True)
-    chtelegram = models.CharField(max_length=200, verbose_name=_("Channerl Telegram"), null=True, blank=True)
+    chtelegram = models.CharField(max_length=200, verbose_name=_("Channel Telegram"), null=True, blank=True)
     ig = models.CharField(max_length=150, verbose_name=_("Instagram"), null=True, blank=True)
     telegram = models.CharField(max_length=200, verbose_name=_("Telegram"), null=True, blank=True)
     email = models.CharField(max_length=100, verbose_name=_("Email"), null=True, blank=True)

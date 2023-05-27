@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-21 22:51+0330\n"
+"POT-Creation-Date: 2023-05-27 21:21+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\templates\partials\footer.html:18
+#: .\templates\partials\footer.html:16
 msgid "Home Page"
 msgstr "صفحه اصلی"
 
-#: .\templates\partials\footer.html:19
+#: .\templates\partials\footer.html:17
 msgid "Services"
 msgstr "سرویس ها"
 
-#: .\templates\partials\footer.html:20
+#: .\templates\partials\footer.html:18
 msgid "About"
 msgstr "درباره ما"
 
-#: .\templates\partials\footer.html:21
+#: .\templates\partials\footer.html:19
 msgid "Help"
 msgstr "راهنما"
 
-#: .\templates\partials\footer.html:22
+#: .\templates\partials\footer.html:20
 msgid "Contact"
 msgstr "تماس با ما"
 
-#: .\templates\partials\navbar.html:46
-msgid "Profile"
-msgstr "پروفایل"
+#: .\templates\partials\navbar.html:51
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#~ msgid "Profile"
+#~ msgstr "پروفایل"

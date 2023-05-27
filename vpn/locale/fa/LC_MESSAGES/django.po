@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-21 22:51+0330\n"
+"POT-Creation-Date: 2023-05-27 21:22+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "پنل مدیریت"
 msgid "Wellcome to Control Panel"
 msgstr "به پنل مدیریت خوش آمدید"
 
-#: .\vpn\apps.py:8 .\vpn\models.py:47
+#: .\vpn\apps.py:8 .\vpn\models.py:52
 msgid "VPN"
 msgstr "وی پی ان"
 
@@ -62,7 +62,7 @@ msgstr "لیست وی پی ان"
 msgid "vpnlists"
 msgstr "لیست وی پی ان ها"
 
-#: .\vpn\models.py:28
+#: .\vpn\models.py:28 .\vpn\models.py:71
 msgid "Title"
 msgstr "عنوان"
 
@@ -82,42 +82,127 @@ msgstr "متن هد 2"
 msgid "Site Logo"
 msgstr "لوگو سایت"
 
+#: .\vpn\models.py:33
+msgid "Buy Note"
+msgstr "راهنمای خرید"
+
+#: .\vpn\models.py:34
+msgid "Channel Telegram"
+msgstr "کانال تلگرام"
+
 #: .\vpn\models.py:35
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+#: .\vpn\models.py:36
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: .\vpn\models.py:37 .\vpn\models.py:89
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\vpn\models.py:40
 msgid "Site Config"
 msgstr "تنظیمات سایت"
 
-#: .\vpn\models.py:36
+#: .\vpn\models.py:41
 msgid "Site Configs"
 msgstr "تنظیمات سایت"
 
-#: .\vpn\models.py:46
+#: .\vpn\models.py:51
 msgid "User"
 msgstr "کاربر"
 
-#: .\vpn\models.py:48
+#: .\vpn\models.py:53
 msgid "Buy Date"
 msgstr "تاریخ خرید"
 
-#: .\vpn\models.py:49
+#: .\vpn\models.py:54 .\vpn\models.py:92
 msgid "Status"
 msgstr "وضعیت"
 
-#: .\vpn\models.py:50
+#: .\vpn\models.py:55
 msgid "Ref ID"
 msgstr "کد پیگیری"
 
-#: .\vpn\models.py:51
+#: .\vpn\models.py:56
 msgid "Authority"
 msgstr "کد اعتبارسنجی"
 
-#: .\vpn\models.py:54
+#: .\vpn\models.py:57
+msgid "Link"
+msgstr "لینک"
+
+#: .\vpn\models.py:60
 msgid "Order"
 msgstr "سفارش"
 
-#: .\vpn\models.py:55
+#: .\vpn\models.py:61
 msgid "Orders"
 msgstr "سفارش ها"
 
-#: .\vpn\templates\vpn\buy.html:5
+#: .\vpn\models.py:72
+msgid "Content"
+msgstr "محتوا"
+
+#: .\vpn\models.py:73
+msgid "Image"
+msgstr "عکس"
+
+#: .\vpn\models.py:74
+msgid "File"
+msgstr "فایل"
+
+#: .\vpn\models.py:77
+msgid "Help"
+msgstr "راهنما"
+
+#: .\vpn\models.py:78
+msgid "Helps"
+msgstr "راهنما"
+
+#: .\vpn\models.py:88
+msgid "Name"
+msgstr "نام"
+
+#: .\vpn\models.py:90
+msgid "Phone Number"
+msgstr "شماره تماس"
+
+#: .\vpn\models.py:91
+msgid "Message"
+msgstr "پیام"
+
+#: .\vpn\models.py:93
+msgid "Read"
+msgstr "خوانده شده"
+
+#: .\vpn\models.py:93
+msgid "UnRead"
+msgstr "خوانده نشده"
+
+#: .\vpn\models.py:96 .\vpn\models.py:97
+msgid "Contact us"
+msgstr "ارتباط با ما"
+
+#: .\vpn\templates\vpn\buy.html:5 .\vpn\templates\vpn\help_detail.html:5
+#: .\vpn\templates\vpn\help_list.html:5 .\vpn\templates\vpn\verify.html:5
 msgid "Buy VPN"
 msgstr "خرید وی پی ان"
+
+#: .\vpn\templates\vpn\contact.html:5
+msgid "Contact"
+msgstr "تماس با ما"
+
+#: .\vpn\templates\vpn\dashboard.html:6
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#: .\vpn\views.py:44
+msgid "Your message has been successfully sent"
+msgstr "پیام شما با موفقیت ارسال شد"
+
+#: .\vpn\views.py:47
+msgid "An error occurred while sending your message"
+msgstr "خطا در ارسال پیام شما، مجدد تلاش کنید"
