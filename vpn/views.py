@@ -1,10 +1,11 @@
 from django.shortcuts import render,  redirect
 from django.contrib.auth.decorators import login_required
-from vpn.models import vpnlist, Help
+from vpn.models import vpnlist, Help, Order
 from django.views.generic import ListView, DetailView
 from vpn.forms import ContactForm
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
+
 
 def home(request):
     vpli = vpnlist.objects.all().order_by('row')
@@ -34,6 +35,7 @@ class HelpListView(ListView):
 class HelpDetailView(DetailView):
     model = Help
 
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -47,3 +49,9 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, template_name='vpn/contact.html', context={'form': form})
+
+
+@login_required()
+def dashboard(request):
+    ordrs = Order.objects.filter(user=request.user)
+    return render(request, "vpn/dashboard.html", {'ordrs': ordrs})

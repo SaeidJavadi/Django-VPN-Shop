@@ -51,16 +51,17 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name=_("User"), null=True, blank=True)
     vpn = models.ForeignKey(vpnlist, on_delete=models.SET_NULL, verbose_name=_("VPN"), null=True, blank=True)
     buydate = models.DateTimeField(auto_now_add=True, verbose_name=_("Buy Date"))
-    status = models.BooleanField(verbose_name=_("Status"))
-    refid = models.CharField(max_length=200, verbose_name=_("Ref ID"))
-    authority = models.CharField(max_length=200, verbose_name=_("Authority"))
+    status = models.BooleanField(verbose_name=_("Status"), default=1)
+    refid = models.CharField(max_length=200, verbose_name=_("Ref ID"), null=True, blank=True)
+    authority = models.CharField(max_length=200, verbose_name=_("Authority"), null=True, blank=True)
+    linkvpn = models.TextField(verbose_name=_("Link"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Order")
         verbose_name_plural = _("Orders")
 
     def __str__(self):
-        return self.name
+        return self.user.email
 
     def get_absolute_url(self):
         return reverse("Order_detail", kwargs={"pk": self.pk})

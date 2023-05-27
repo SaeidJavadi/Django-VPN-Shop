@@ -137,6 +137,9 @@ TIME_INPUT_FORMATS = [
     '%H:%M',        # '14:30'
 ]
 
+DATE_FORMAT = "Y/M/d"
+
+
 LOCALE_PATHS = (
     BASE_DIR / 'locale',
 )

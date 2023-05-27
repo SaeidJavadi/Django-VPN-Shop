@@ -1,5 +1,5 @@
 from django.urls import path
-from vpn.views import home, vpnbuy, buyVerify, HelpListView, HelpDetailView, contact
+from vpn.views import home, vpnbuy, buyVerify, HelpListView, HelpDetailView, contact, dashboard
 
 app_name = 'vpn'
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('helplist', HelpListView.as_view(), name='helplist'),
     path('help/<int:pk>/', HelpDetailView.as_view(), name='help'),
     path('contact/', contact, name='contact'),
+    path('dashboard/', dashboard, name='dashboard'),
 ]
