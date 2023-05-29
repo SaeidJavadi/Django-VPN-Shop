@@ -32,3 +32,4 @@ class HelpAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("phone", "email", "name", "status")
     list_editable = ("status",)
+    readonly_fields = ('message',)
