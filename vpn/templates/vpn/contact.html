@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% block head %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'vpn/stylecontact.css' %}" />
+{% endblock head %}
 {% block title %}
     {% trans "Contact" %}
 {% endblock title %}
@@ -8,114 +13,96 @@
     <div class="col-md-8 rtl">
         <div class="section layout_padding">
             <div class="container">
-                <div class="row margin-top_30">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8 margin-top_30"
-                         style="direction: rtl;
-                                text-align: right">
-                        <div class="left-contact" style="text-align: center;">
-                            <div class="media cont-line">
-                                <div class="media-left icon-b">
-                                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
-                                </div>
-                                <div class="media-body dit-right">
-                                    <span style="color:#ff00d4;font-size:20px;">کانال تلگرام: </span>
-                                    <a href="https://t.me/{{ SITECONF.chtelegram }}" target="_blank">{{ SITECONF.chtelegram }}</a>
-                                </div>
-                            </div>
-                            <div class="media cont-line">
-                                <div class="media-left icon-b">
-                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-                                </div>
-                                <div class="media-body dit-right">
-                                    <span style="color:#ff00d4;font-size:20px;">اینستاگرام: </span>
-                                    <a href="https://www.instagram.com/{{ SITECONF.ig }}" target="_blank">{{ SITECONF.ig }}</a>
-                                </div>
-                            </div>
-                            {% comment %} <div class="media cont-line">
-                        <div class="media-left icon-b">
-                            <i class="fa fa-location-arrow" aria-hidden="true"></i>
-                        </div>
-                        <div class="media-body dit-right">
-                            <h4>تلگرام ما</h4>
-                            <a href="https://t.me/{{ SITECONF.telegram }}" target="_blank">{{ SITECONF.telegram }}</a>
-                        </div>
-                            </div> {% endcomment %}
-                            <div class="media cont-line">
-                                <div class="media-left icon-b">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                </div>
-                                <div class="media-body dit-right">
-                                    <span style="color:#ff00d4;font-size:20px;">ایمیل: </span>
-                                    <a href="mailto:{{ SITECONF.emai }}" target="_blank">{{ SITECONF.email }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
-                </div>
-                <div class="section inner_page_header" style="margin:20px 0 20px 0;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="full" style="text-align: center;direction: rtl;color:#ffa600;">
-                                    <h3>ارتباط با ما</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row margin-top_30">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8 margin-top_30" style="direction: rtl">
-                        <div class="contact-block">
-                            <form action="#" method="post">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            {{ form.name }}
-                                            {{ form.name.errors }}
-                                            <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            {{ form.email }}
-                                            {{ form.email.errors }}
-                                            <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.phone }}
-                                            {{ form.phone.errors }}
-                                            <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            {{ form.message }}
-                                            {{ form.message.errors }}
-                                            <div class="help-block with-errors" dir="rtl" style="text-align: right;"></div>
-                                        </div>
-                                        <div class="submit-button text-center margin-top_30">
-                                            <button class="btn btn-success"
-                                                    style="margin-top:10px"
-                                                    id="submit"
-                                                    type="submit">ارسال پیام</button>
-                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-2"></div>
+                <div class="row margin-top_30" style="direction: rtl; text-align: center;">
+                    <div class="col-md-4">
+                        <a href="https://t.me/{{ SITECONF.chtelegram }}" target="_blank" style="text-decoration: none">
+                        <i class="fa fa-telegram" style="font-size:35px" aria-hidden="true"></i>
+                    </br>
+                    <span style="color:#cde508;font-size:20px;">کانال تلگرام</span>
+                </br>
+                {{ SITECONF.chtelegram }}</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.instagram.com/{{ SITECONF.ig }}" target="_blank" style="text-decoration: none">
+                <i class="fa fa-instagram" style="font-size:35px" aria-hidden="true"></i>
+            </br>
+            <span style="color:#cde508;font-size:20px;">اینستاگرام</span>
+        </br>
+        {{ SITECONF.ig }}</a>
+    </div>
+    <div class="col-md-4">
+        <a href="mailto:{{ SITECONF.emai }}" target="_blank" style="text-decoration: none">
+        <i class="fa fa-envelope" style="font-size:20px" aria-hidden="true"></i>
+    </br>
+    <span style="color:#cde508;font-size:20px;">ایمیل</span>
+</br>
+{{ SITECONF.email }}</a>
+</div>
+</div>
+<div class="section inner_page_header" style="margin:30px 0 10px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="full" style="text-align: center;direction: rtl;color:#ffa600;">
+                    <h2 style="font-weight:bold;">
+                        ارتباط با ما
+                    </h3>
                 </div>
             </div>
         </div>
     </div>
-    {% include "vpn/sidebar.html" %}
+</div>
+<div class="row margin-top_10">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 margin-top_30" style="direction:rtl;">
+        <div class="contact-block">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group" style="padding:10px 0px 5px 0;text-align: center;">
+                            {{ form.name }}
+                            {{ form.name.errors }}
+                            <div class="help-block with-errors" dir="rtl" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" style="padding:10px 0px 5px 0;text-align: center;">
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                            <div class="help-block with-errors" dir="rtl" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" style="padding:10px 0px 5px 0;text-align: center;">
+                            {{ form.phone }}
+                            {{ form.phone.errors }}
+                            <div class="help-block with-errors" dir="rtl" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group" style="padding:10px 0px 5px 0;text-align: center;">
+                            {{ form.message }}
+                            {{ form.message.errors }}
+                            <div class="help-block with-errors" dir="rtl" style="text-align: center;"></div>
+                        </div>
+                        <div class="submit-button text-center margin-top_30">
+                            <button class="btn btn-success"
+                                    style="margin-top:10px"
+                                    id="submit"
+                                    type="submit">ارسال پیام</button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+</div>
+</div>
+</div>
+{% include "vpn/sidebar.html" %}
 {% endblock body %}

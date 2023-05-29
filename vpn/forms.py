@@ -12,7 +12,6 @@ class vpnlistForm(forms.ModelForm):
         }
         labels = {
             'title': 'عنوان',
-
         }
         forceInputField = 'این فیلد اجباری است'
         error_messages = {
@@ -39,13 +38,13 @@ class ContactForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(
                 attrs={'class': 'form-control', 'data-error': 'لطفا نام خود را وارد کنید', 'placeholder': 'نام شما',
-                       'style': 'color:#00FF3E'}),
+                       'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'data-error': 'لطفا ایمیل خود را وارد کنید',
-                                             'placeholder': 'ایمیل شما', 'style': 'color:#00FF3E'}),
+                                             'placeholder': 'ایمیل شما', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
             'phone': forms.NumberInput(attrs={'class': 'form-control', 'data-error': 'لطفا شماره خود را وارد کنید',
                                               'placeholder': 'شماره تماس شما', 'maxlength': '11', 'dir': 'ltr',
-                                              'minlength': '11', 'type': 'tel', 'style': 'color:#00FF3E'}),
+                                              'minlength': '11', 'type': 'tel', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;', 'onkeypress': 'return isNumber(event)', 'required': 'false'}),
             'message': forms.Textarea(
                 attrs={'class': 'form-control', 'data-error': 'پیام خود را بنویسید', 'placeholder': 'پیام شما',
-                       'style': 'color:#00FF3E'})
+                       'style': 'color:#00FF3E;background-color:#2e2e2ea4;'})
         }
