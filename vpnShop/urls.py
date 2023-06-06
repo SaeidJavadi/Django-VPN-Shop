@@ -25,3 +25,7 @@ if settings.DEBUG == True:
 admin.site.site_header = _('Administrator Control Panel')
 admin.site.site_title = _('Administrator Control Panel')
 admin.site.index_title = _('Wellcome to Control Panel')
+
+
+handler404 = 'vpn.views.handler404'
+handler500 = 'vpn.views.handler500'

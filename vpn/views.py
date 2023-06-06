@@ -55,3 +55,11 @@ def contact(request):
 def dashboard(request):
     ordrs = Order.objects.filter(user=request.user)
     return render(request, "vpn/dashboard.html", {'ordrs': ordrs})
+
+
+def handler404(request):
+    return render(request, 'vpn/404.html')
+
+
+def handler500(request):
+    return render(request, 'vpn/500.html')
