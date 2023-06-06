@@ -206,3 +206,10 @@ EMAIl_HOST_USER = config('EMAIl_HOST_USER')
 EMAIl_HOST_PASSWORD = config('EMAIl_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
+# SSL
+SECURE_SSL_REDIRECT = True
+# cookies will only be sent via HTTPS connections
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
