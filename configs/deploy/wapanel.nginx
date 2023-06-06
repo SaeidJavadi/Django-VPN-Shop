@@ -1,0 +1,58 @@
+log_format NgingxLogs escape=json
+        '{'
+                '"time_local":"$time_local",'
+                '"remote_addr":"$remote_addr",'
+                '"request":"$request",'
+                '"request_url":"$request_uri",'
+                '"request_time":"$request_time",'
+                '"remote_user":"$remote_user",'
+                '"request_method":"$request_method",'
+                '"request_length":"$request_length",'
+                '"request_id":"$request_id",'
+                '"http_referrer":"$http_referer",'
+                '"connection":"$connection",'
+                '"connection_requests":"$connection_requests",'
+                '"pipe":"$pipe",'
+                '"time_iso8601":"$time_iso8601",'
+                '"http_x_forwarded_for":"$http_x_forwarded_for",'
+                '"realip_remote_addr":"$realip_remote_addr",'
+                '"query_string":"$query_string",'
+                '"http_cookie":"$http_cookie",'
+                '"http_user_agent":"$http_user_agent",'
+                '"body_bytes_sent":"$body_bytes_sent",'
+                '"bytes_sent":"$bytes_sent",'
+                '"http_host":"$http_host",'
+                '"msec":"$msec",'
+                '"server_port":"$server_port",'
+                '"server_protocol":"$server_protocol",'
+                '"ssl_protocol":"$ssl_protocol",'
+                '"ssl_cipher":"$ssl_cipher",'
+                '"status":"$status",'
+                '"upstream_response_time":"$upstream_response_time",'
+                '"upstream_addr":"$upstream_addr",'
+                '"upstream_connect_time":"$upstream_connect_time"'
+        '}';
+
+
+    access_log  /home/admin/vpnShop/zTMP/logs/nginxLog.log NgingxLogs;
+
+
+
+server {
+    server_name irvpn.shop www.irvpn.shop;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/admin/vpnShop/staticfiles/;
+    }
+    location /media {
+        autoindex on;
+        alias /home/admin/vpnShop/media/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/admin/vpnShop/vpnShop.sock;
+    }
+
+}

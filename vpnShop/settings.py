@@ -92,8 +92,12 @@ WSGI_APPLICATION = 'vpnShop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "vpnshopdb",
+        'USER': "vpnAdmin",
+        'PASSWORD': "Vpnsh00p2023",
+        'HOST': "localhost",
+        'PORT': 5430,
     }
 }
 
