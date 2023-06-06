@@ -57,9 +57,9 @@ def dashboard(request):
     return render(request, "vpn/dashboard.html", {'ordrs': ordrs})
 
 
-def handler404(request):
+def handler404(request, *args, **argv):
     return render(request, 'vpn/404.html')
 
 
-def handler500(request):
+def handler500(request, *args, **argv):
     return render(request, 'vpn/500.html')
