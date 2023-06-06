@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-SITE_ADDRESS = '127.0.0.1:8000'
+SITE_ADDRESS = 'irvpn.shop'
 
 
 # Application definition
