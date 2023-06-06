@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-27 21:22+0330\n"
+"POT-Creation-Date: 2023-06-06 21:28+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,12 +186,20 @@ msgstr "خوانده نشده"
 msgid "Contact us"
 msgstr "ارتباط با ما"
 
+#: .\vpn\templates\vpn\404.html:5
+msgid "Page Not Found"
+msgstr "صفحه یافت نشد"
+
+#: .\vpn\templates\vpn\500.html:5
+msgid "Server Error"
+msgstr "خطای سرور"
+
 #: .\vpn\templates\vpn\buy.html:5 .\vpn\templates\vpn\help_detail.html:5
 #: .\vpn\templates\vpn\help_list.html:5 .\vpn\templates\vpn\verify.html:5
 msgid "Buy VPN"
 msgstr "خرید وی پی ان"
 
-#: .\vpn\templates\vpn\contact.html:5
+#: .\vpn\templates\vpn\contact.html:10
 msgid "Contact"
 msgstr "تماس با ما"
 
