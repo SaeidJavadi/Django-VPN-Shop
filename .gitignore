@@ -4,3 +4,4 @@ media/
 staticfiles/
 .VSCodeCounter/
 settings.json
+*.log
