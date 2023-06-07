@@ -1,7 +1,7 @@
 __pycache__/
 z.tmp/
 media/
+logs/
 staticfiles/
 .VSCodeCounter/
 settings.json
-*.log
