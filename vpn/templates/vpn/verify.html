@@ -35,9 +35,8 @@
                         <th>{{ vpn.price_t }}</th>
                     </tr>
                 </table>
-                <script src="{% static 'vpn/js/chngcolor.js' %}"></script>
                 <div id="stepsId">
-                    <p id="li1">{{ SITECONF.buynote }}</p>
+                    <p id="li1" style="margin-top:20px;direction:rtl;text-align:center;">{{ SITECONF.buynote }}</p>
                 </div>
             </br>
             <input name="vvpnid" type="radio" value="{{ vpn.id }}" checked hidden="true" />
@@ -45,7 +44,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-center">
                     <button class="btn btn-lg btn-success btn-block col-8"
-                            style="padding: 10px 10px 10px 10px"
+                            style="padding: 5px 10px 10px 10px"
                             type="submit">تایید و پرداخت</button>
                 </div>
                 <div class="col-md-2"></div>
@@ -53,5 +52,19 @@
         </form>
     </p>
 </div>
+<script>
+    var colors = ["blue", "yellow", "red", "green", "orange"]
+    var currentColor = 0
+    var lis = document.querySelectorAll("#stepsId p")
+
+    function changeColor() {
+        --currentColor
+        if (currentColor < 0) currentColor = colors.length - 1
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.color = colors[(currentColor + i) % colors.length]
+        }
+    }
+    setInterval(changeColor, 1000)
+</script>
 {% include "vpn/sidebar.html" %}
 {% endblock body %}
