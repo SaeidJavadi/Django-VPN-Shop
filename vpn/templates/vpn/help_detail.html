@@ -5,9 +5,9 @@
     {% trans "Buy VPN" %}
 {% endblock title %}
 {% block body %}
-    <div class="col-md-8 rtl" style="text-align:right;">
-        <h1 >{{ object.title }}</h1>
-        <p>{{ object.content|safe}}</p>
+    <div class="col-md-8 rtl" style="direction: rtl;!">
+        <h1>{{ object.title }}</h1>
+        <p>{{ object.content|safe }}</p>
     </div>
     {% include "vpn/sidebar.html" %}
 {% endblock body %}
