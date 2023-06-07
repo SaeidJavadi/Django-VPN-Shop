@@ -16,11 +16,17 @@
         <table border = "1">
             <tr>
                 <td style="color:green;font-weight:bold;">لینک وی پی ان</td>
+                {% if ordr.fileconfig %}<td style="color:green;">فایل کانفیگ</td>{% endif %}
                 <td style="color:green;">تاریخ سفارش</td>
             </tr>
             {% for ordr in ordrs %}
                 <tr>
                     <td>{{ ordr.linkvpn }}</td>
+                    {% if ordr.fileconfig %}
+                        <td>
+                            <a href="{{ ordr.fileconfig }}">دانلود</a>
+                        </td>
+                    {% endif %}
                     <td>{{ ordr.buydate }}</td>
                 </tr>
             {% endfor %}

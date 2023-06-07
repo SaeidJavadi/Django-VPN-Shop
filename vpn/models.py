@@ -55,7 +55,7 @@ class Order(models.Model):
     refid = models.CharField(max_length=200, verbose_name=_("Ref ID"), null=True, blank=True)
     authority = models.CharField(max_length=200, verbose_name=_("Authority"), null=True, blank=True)
     linkvpn = models.TextField(verbose_name=_("Link"), null=True, blank=True)
-    fileconfig = models.FileField(upload_to="fileconfig", verbose_name=_("File Config"))
+    fileconfig = models.FileField(upload_to="fileconfig", verbose_name=_("File Config"), null=True, blank=True)
 
     class Meta:
         verbose_name = _("Order")
