@@ -25,7 +25,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(Help)
 class HelpAdmin(admin.ModelAdmin):
-    list_display = ("content", "title")
+    list_display = ("title",)
 
 
 @admin.register(Contact)

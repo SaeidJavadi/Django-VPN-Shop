@@ -24,7 +24,7 @@
                     <td>{{ ordr.linkvpn }}</td>
                     {% if ordr.fileconfig %}
                         <td>
-                            <a href="{{ ordr.fileconfig }}">دانلود</a>
+                            <a href="{{ ordr.fileconfig.url }}">دانلود</a>
                         </td>
                     {% endif %}
                     <td>{{ ordr.buydate }}</td>
