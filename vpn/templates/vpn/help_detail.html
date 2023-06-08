@@ -12,9 +12,11 @@
 </br>
 </br>
 <div style="text-align:center">
-    <img alt="help" src="{{ object.image.url }}" style="margin:5px 0 10px 0;">
-</br>
-<a href="{{ object.file.url }}" class="btn btn-primary">دانلود فایل</a>
+    {% if object.image %}<img alt="help" src="{{ object.image.url }}" style="margin:5px 0 10px 0;">{% endif %}
+    {% if object.file %}
+    </br>
+    <a href="{{ object.file.url }}" class="btn btn-primary">دانلود فایل</a>
+{% endif %}
 </div>
 </div>
 {% include "vpn/sidebar.html" %}
