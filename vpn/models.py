@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from accounts.models import User
 
 
@@ -70,7 +71,7 @@ class Order(models.Model):
 
 class Help(models.Model):
     title = models.CharField(max_length=150, verbose_name=_("Title"))
-    content = RichTextField(verbose_name=_("Content"))
+    content = RichTextUploadingField(verbose_name=_("Content"))
     image = models.ImageField(upload_to="help", verbose_name=_("Image"), null=True, blank=True)
     file = models.FileField(upload_to="dl", max_length=100, null=True, blank=True, verbose_name=_("File"))
 
