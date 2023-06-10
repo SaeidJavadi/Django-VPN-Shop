@@ -13,3 +13,8 @@ def daytomo(value):
 @register.filter()
 def tocurrencys(value):
     return str("{:,}".format(int(value)))
+
+
+@register.filter()
+def tojdt(value):
+    return jdatetime.datetime.fromgregorian(date=value).strftime("%Y/%m/%d %H:%M")
