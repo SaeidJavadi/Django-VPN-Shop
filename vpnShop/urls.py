@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('irvpnadmin2023/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('api/', include('api.urls')),
     path('api/rest-auth/', include('dj_rest_auth.urls')),

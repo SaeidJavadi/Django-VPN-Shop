@@ -15,17 +15,19 @@
     <div class="list-group">
         <table border = "1">
             <tr>
-                {% if ordr.linkvpn %}<td style="color:green;font-weight:bold;">لینک وی پی ان</td>{% endif %}
-                {% if ordr.fileconfig %}<td style="color:green;">فایل کانفیگ</td>{% endif %}
+                <td style="color:green;font-weight:bold;">لینک وی پی ان</td>
+                <td style="color:green;">فایل کانفیگ</td>
                 <td style="color:green;">تاریخ سفارش</td>
             </tr>
             {% for ordr in ordrs %}
                 <tr>
-                    {% if ordr.linkvpn %}<td>{{ ordr.linkvpn }}</td>{% endif %}
+                    <td>{{ ordr.linkvpn }}</td>
                     {% if ordr.fileconfig %}
                         <td>
                             <a href="{{ ordr.fileconfig.url }}">دانلود</a>
                         </td>
+                    {% else %}
+                        <td>X</td>
                     {% endif %}
                     <td>{{ ordr.buydate|tojdt }}</td>
                 </tr>
