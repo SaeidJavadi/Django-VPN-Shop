@@ -19,8 +19,10 @@ urlpatterns = [
 
 
 if settings.DEBUG == True:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = _('Administrator Control Panel')
 admin.site.site_title = _('Administrator Control Panel')

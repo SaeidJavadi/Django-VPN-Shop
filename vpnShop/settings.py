@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 SITE_ADDRESS = 'irvpn.shop'
@@ -90,16 +90,24 @@ WSGI_APPLICATION = 'vpnShop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "vpnshopdb",
-        'USER': "vpnAdmin",
-        'PASSWORD': "Vpnsh00p2023",
-        'HOST': "localhost",
-        'PORT': 5430,
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('POSTGRES_DB'),
+            'USER': config('POSTGRES_USER'),
+            'PASSWORD': config('POSTGRES_PASSWORD'),
+            'HOST': config('POSTGRES_HOST'),
+            'PORT': config('POSTGRES_PORT')
+        }
+    }
 
 
 # Password validation
@@ -124,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
     ('en', 'English'),
     ('fa', 'Persian')
@@ -208,9 +216,9 @@ EMAIl_HOST_PASSWORD = config('EMAIl_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-
-# SSL
-SECURE_SSL_REDIRECT = True
-# cookies will only be sent via HTTPS connections
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+if not DEBUG:
+    # SSL
+    SECURE_SSL_REDIRECT = True
+    # cookies will only be sent via HTTPS connections
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True

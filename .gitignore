@@ -5,3 +5,5 @@ logs/
 staticfiles/
 .VSCodeCounter/
 settings.json
+.env
+venv/
