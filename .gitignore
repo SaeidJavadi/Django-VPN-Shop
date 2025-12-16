@@ -1,9 +1,65 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-z.tmp/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
 media/
-logs/
 staticfiles/
-.VSCodeCounter/
-settings.json
+*.mo
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# VSCode
+.vscode/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# env files
 .env
-venv/
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.*
+*.log
+
+# IDEs
+.idea/
+*.iml
+
+# OS generated
+.DS_Store
+Thumbs.db
