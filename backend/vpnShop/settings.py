@@ -209,10 +209,10 @@ SANDBOX = True
 
 # Email Configs
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIl_HOST = config('EMAIl_HOST')
-EMAIl_PORT = config('EMAIl_PORT')
-EMAIl_HOST_USER = config('EMAIl_HOST_USER')
-EMAIl_HOST_PASSWORD = config('EMAIl_HOST_PASSWORD')
+EMAIl_HOST = config('EMAIL_HOST')
+EMAIl_PORT = config('EMAIL_PORT')
+EMAIl_HOST_USER = config('EMAIL_HOST_USER')
+EMAIl_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
