@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="{% static "root/src/favicon.ico" %}" rel="shortcut icon" />
-        <meta content="با سرویس های پرسرعت ما لذت اتصال با کیفیت به اینترنت جهانی را تجربه کنید."
+        <meta content="Experience fast and high-quality access to the global internet with our high-speed services."
               name="description" />
-        <meta content="وی پی ان، خرید وی پی ان، فروش وی پی ان، ساکس، پروکسی، فیلترشکن، اتصال به وی پی ان VPN"
+        <meta content="VPN, buy VPN, sell VPN, SOCKS, proxy, anti-filter, VPN connection"
               name="keywords" />
         <meta content="index, follow" name="robots" />
         <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
@@ -18,23 +18,24 @@
               name="bingbot" />
         <meta content="irvpn.shop" name="author" />
         <meta content="website" property="og:type" />
-        <meta content="وی پی ان پر سرعت" property="og:title" />
-        <meta content="با سرویس‌های وی پی ان پرسرعت VPN، لذت اتصال با کیفیت به اینترنت جهانی را تجربه کنید."
+        <meta content="High-Speed VPN" property="og:title" />
+        <meta content="With our high-speed VPN services, enjoy secure and high-quality access to the global internet."
               property="og:description" />
         <meta content="{% static 'root/src/logo.png' %}" property="og:image" />
         <meta content="https://irvpn.shop" property="og:url" />
-        <meta content="خرید وی پی ان پر سرعت" property="og:site_name" />
-        <meta content="خرید وی پی ان پر سرعت" name="twitter:title" />
-        <meta content="با سرویس‌های وی پی ان پرسرعت vpn، لذت اتصال با کیفیت به اینترنت جهانی را تجربه کنید."
+        <meta content="Buy High-Speed VPN" property="og:site_name" />
+        <meta content="Buy High-Speed VPN" name="twitter:title" />
+        <meta content="With our high-speed VPN services, enjoy secure and high-quality access to the global internet."
               name="twitter:description" />
         <meta content="{{ SITE_ADDRESS }}" name="twitter:site" />
         <meta content="{{ SITE_ADDRESS }}" name="twitter:card" />
-        <meta content="خرید وی پی ان پر سرعت" name="twitter:image:alt" />
+        <meta content="Buy High-Speed VPN" name="twitter:image:alt" />
         <link rel="stylesheet"
               href="{% static 'root/css/bootstrap-5.0.2.min.css' %}">
         <script src="{% static 'root/js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'root/js/popper.min.js' %}"></script>
-        <script src="{% static 'root/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'root/js/bootstrap.min.js' %}"></scrip
+        <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'root/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'root/css/flags32.css' %}">
         <link rel="stylesheet" href="{% static 'root/css/snackbar.css' %}">
@@ -42,7 +43,6 @@
                 src="https://www.googletagmanager.com/gtag/js?id=UA-171093998-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-
             function gtag() {
                 dataLayer.push(arguments);
             }
@@ -53,7 +53,6 @@
                 src="https://www.googletagmanager.com/gtag/js?id=UA-252496654-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-
             function gtag() {
                 dataLayer.push(arguments);
             }
@@ -61,11 +60,9 @@
             gtag("config", "UA-252496654-1");
         </script>
         <script async=""
-                8
                 src="https://www.googletagmanager.com/gtag/js?id=AW-10902502917"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-
             function gtag() {
                 dataLayer.push(arguments);
             }
@@ -79,7 +76,7 @@
         {% block head %}
         {% endblock head %}
     </head>
-    <body class="bg-dark">
+    <body class="bg-dark" dir="ltr">
         <script>
             function myFunction() {
                 var x = document.getElementById("snackbar");
@@ -97,7 +94,7 @@
             </div>
             <div class="row">
                 <div class="col-m-1"></div>
-                <dv class="col-m-1"></dv>
+                <div class="col-m-1"></div>
                 <div class="col-m-10 d-flex align-items-center text-center justify-content-center"
                      style="text-align:center">{% include "partials/messages.html" %}</div>
                 <div class="col-m-1"></div>

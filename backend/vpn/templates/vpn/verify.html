@@ -15,56 +15,58 @@
             width: 70%;
             padding: 10px;
             text-align: center;
-            text-weghit: bold
+            font-weight: bold;
         }
     </style>
-    <div class="col-md-8 rtl">
+    <div class="col-md-8 ">
         <p style="text-align:center;">
             <form action="buy" method="POST">
                 {% csrf_token %}
-                <h2 style="text-align:center;padding: 10px 0 10px 0;color:#ffff;">سفارش شما</h2>
+                <h2 style="text-align:center;padding: 10px 0 10px 0;color:#ffff;">Your Order</h2>
                 <table>
                     <tr style="color:#ff8b00;">
-                        <th>وی پی ان درخواستی شما</th>
-                        <th>مدت اعتبار</th>
-                        <th>قیمت (تومان)</th>
+                        <th>Your Requested VPN</th>
+                        <th>Duration</th>
+                        <th>Price</th>
                     </tr>
                     <tr>
                         <th>{{ vpn.title }}</th>
-                        <th>{{ vpn.day }} (روز)</th>
+                        <th>{{ vpn.day }} (days)</th>
                         <th>{{ vpn.price_t }}</th>
                     </tr>
                 </table>
                 <div id="stepsId">
-                    <p id="li1" style="margin-top:20px;direction:rtl;text-align:center;">{{ SITECONF.buynote }}</p>
+                    <p id="li1" style="margin-top:20px;direction:auto;text-align:center;">{{ SITECONF.buynote }}</p>
                 </div>
-            </br>
-            <input name="vvpnid" type="radio" value="{{ vpn.id }}" checked hidden="true" />
-            <div class="row justify-content-center">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 text-center">
-                    <button class="btn btn-lg btn-success btn-block col-8"
+                <br>
+                <input name="vvpnid" type="radio" value="{{ vpn.id }}" checked hidden="true" />
+                <div class="row justify-content-center">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 text-center">
+                        <button class="btn btn-lg btn-success btn-block col-8"
                             style="padding: 5px 10px 10px 10px"
-                            type="submit">تایید و پرداخت</button>
+                            type="submit"
+                            onclick="alert('Thank you for testing this project ❤️');" {# Remove This Line #}
+                            >Confirm & Pay</button>
+                    </div>
+                    <div class="col-md-2"></div>
                 </div>
-                <div class="col-md-2"></div>
-            </div>
-        </form>
-    </p>
-</div>
-<script>
-    var colors = ["blue", "yellow", "red", "green", "orange"]
-    var currentColor = 0
-    var lis = document.querySelectorAll("#stepsId p")
+            </form>
+        </p>
+    </div>
+    <script>
+        var colors = ["blue", "yellow", "red", "green", "orange"]
+        var currentColor = 0
+        var lis = document.querySelectorAll("#stepsId p")
 
-    function changeColor() {
-        --currentColor
-        if (currentColor < 0) currentColor = colors.length - 1
-        for (var i = 0; i < lis.length; i++) {
-            lis[i].style.color = colors[(currentColor + i) % colors.length]
+        function changeColor() {
+            --currentColor
+            if (currentColor < 0) currentColor = colors.length - 1
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.color = colors[(currentColor + i) % colors.length]
+            }
         }
-    }
-    setInterval(changeColor, 1000)
-</script>
-{% include "vpn/sidebar.html" %}
+        setInterval(changeColor, 1000)
+    </script>
+    {% include "vpn/sidebar.html" %}
 {% endblock body %}

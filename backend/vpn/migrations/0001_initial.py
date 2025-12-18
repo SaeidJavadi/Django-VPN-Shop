@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=150, verbose_name='VPN Title')),
                 ('day', models.IntegerField(verbose_name='Active Day')),
-                ('price_t', models.CharField(max_length=150, verbose_name='Price Toman')),
+                ('price_t', models.CharField(max_length=150, verbose_name='Price')),
                 ('price_c', models.CharField(blank=True, max_length=150, null=True, verbose_name='Price Digital currency')),
                 ('row', models.IntegerField(verbose_name='Row')),
                 ('color', models.CharField(blank=True, max_length=150, null=True, verbose_name='Color')),

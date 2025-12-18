@@ -1,16 +1,16 @@
 {% load i18n %}
 {% load static %}
 {% load basetags %}
-<div class="col-md-8 rtl">
+<div class="col-md-8">
     <div style="margin-top:25px;">
-        <p class="rtl center"
+        <p class="center"
            id="blink1"
            style="font-size: medium;
                   color:rgb(182, 253, 255);
                   margin-bottom: 2px">
             <strong>{{ SITECONF.headtext1 }}</strong>
         </p>
-        <p class="rtl center"
+        <p class="center"
            id="blink3"
            style="font-size: medium;
                   color:rgb(182, 253, 255);
@@ -35,7 +35,6 @@
                 } else {
                     $('#blink1').css("color", "white");
                     $('#blink2').css("color", "white");
-                    //$('#blink3').css("color", "rgb(44, 225, 210)");
                     hide = 0;
                 }
                 setTimeout("blinks(" + hide + ")", 800);
@@ -66,13 +65,10 @@
             <div style="opacity: 1.0;">
                 <div class="formbox">
                     <h2 class="h2 font-weight-normal"
-                        style="direction: rtl;
-                               text-align:center;
-                               font-size: larger">سرویس مورد نظر خود را انتخاب کنید</h2>
+                        style="text-align:center;
+                               font-size: larger">Select the service you want</h2>
                     <div class="form-group"
-                         style="align-content:flex-start;
-                                text-align:right;
-                                direction:rtl">
+                         style="align-content:flex-start;">
                         <section class="serviceselection" id="serviceselection">
                             <table class="table table-dark table-striped table-bordered table-hover"
                                    id="cardtable">
@@ -83,7 +79,6 @@
                                             <td class="None">
                                                 <div style="display:flex;
                                                             flex-direction: row;
-                                                            justify-content: right;
                                                             align-items: center">
                                                     <input id="vpli_{{ vpn.id }}"
                                                            name="vpnid"
@@ -93,12 +88,11 @@
                                                            {% if forloop.counter0 == 0 %}checked="checked"{% endif %} />
                                                     <label for="vpli_{{ vpn.id }}"
                                                            onclick="reply_click({{ forloop.counter0 }},{{ vpn.price_t }} )"
-                                                           style="margin-right: 5px;
-                                                                  text-align: right;
+                                                           style="margin-left: 5px;
                                                                   clear: both;
                                                                   float:left;
                                                                   color:{{ vpn.color }}">
-                                                        {{ vpn.title }} - {{ vpn.price_t|tocurrencys }} - {{ vpn.day|daytomo }} ماهه
+                                                        {{ vpn.title }} - {{ vpn.price_t|tocurrencys }} - {{ vpn.day|daytomo }} months
                                                     </label>
                                                 </div>
                                             </td>
@@ -114,7 +108,7 @@
                                 <button class="btn btn-warning"
                                         hidden=""
                                         name="discount-submit"
-                                        type="submit">اعمال</button>
+                                        type="submit">Apply</button>
                             </div>
                             <input aria-describedby="basic-addon1"
                                    aria-label=""
@@ -123,23 +117,23 @@
                                    hidden=""
                                    id="inputdiscount"
                                    name="discount"
-                                   placeholder="اگر کد تخفیف دارید وارد کنید"
+                                   placeholder="Enter discount code if you have one"
                                    type="text"
                                    value="" />
                         </div>
                     </div>
-                    <div class="alert alert-primary rtl right">
+                    <div class="alert alert-primary center">
                         <p>
-                            <strong class="rtl" style="font-size: medium;">تمامی سرویس‌ها دارای آیپی ثابت می‌باشند</strong>
+                            <strong style="font-size: medium;">All services have a fixed IP</strong>
                         </p>
-                        <strong id="finalprice_str">مبلغ نهایی:</strong> <span id="finalprice">0</span>
+                        <strong id="finalprice_str">Final price:</strong> <span id="finalprice">0</span>
                     </div>
-                    <p class="center rtl"
+                    <p class="center"
                        style="font-size: medium;
                               color: #ffffff;
                               margin-top: 2px;
                               margin-bottom: 1px">
-                        پورت های وی پی ان یا کل اینترنت از جانب برخی شرکت های اینترنتی در بعضی ساعات محدود می‌شوند لطفا با علم به این موضوع خرید خود را انجام دهید، عوض کردن شرکت اینترنتی و استفاده از V2RAY مشکل را حل می کند.
+                        VPN ports or internet access may be restricted by some ISPs at certain hours. Please make your purchase with this in mind. Changing your ISP or using V2RAY will solve the issue.
                     </p>
                     <p style="padding:5px;"></p>
                     <div class="row justify-content-center">
@@ -151,7 +145,7 @@
                                     name="checkout-submit"
                                     type="submit"
                                     value="checkout-submit"
-                                    target="_blank">پرداخت</button>
+                                    target="_blank">Pay</button>
                         </div>
                         <div class="col-md-1"></div>
                     </div>

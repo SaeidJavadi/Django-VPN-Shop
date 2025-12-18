@@ -39,8 +39,8 @@ msgid "Active Day"
 msgstr "روزهای فعال"
 
 #: .\vpn\models.py:11
-msgid "Price Toman"
-msgstr "قیمت به تومان"
+msgid "Price"
+msgstr "قیمت"
 
 #: .\vpn\models.py:12
 msgid "Price Digital currency"

@@ -13,10 +13,31 @@ def home(request):
 
 
 def vpnbuy(request):
+    """
+        Handle VPN purchase form submission.
+
+        This view processes the POST request sent from the VPN purchase page.
+        Currently, it only retrieves the selected VPN ID and redirects the user
+        to the home page.
+
+        ⚠️ IMPORTANT (Production Notice):
+        The payment logic is intentionally NOT implemented here.
+        In a production environment, this section must be completed by:
+        - Integrating a real payment gateway (e.g., Stripe, Zarinpal, PayPal)
+        - Validating the selected VPN ID
+        - Creating an order/payment record in the database
+        - Handling payment success and failure callbacks securely
+
+        This placeholder implementation exists for demonstration
+        and testing purposes only.
+    """
     if request.method == "POST":
         vpnid = request.POST.get('vvpnid')
         # return redirect('payment:pay', vid=vpnid)
-        return redirect('https://zarinp.al/ilmabeauty')
+        # return redirect('https://zarinp.al/ilmabeauty')
+        vpn = vpnlist.objects.get(id=vpnid)
+        Order.objects.create(user=request.user, vpn=vpn)
+        return redirect('vpn:dashboard')
     else:
         vpli = vpnlist.objects.all().order_by('row')
         return render(request=request, template_name="vpn/buy.html", context={'vpnall': vpli})
@@ -41,7 +62,8 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Your message has been successfully sent'), extra_tags='alert alert-success')
+            messages.success(request, _(
+                'Your message has been successfully sent'), extra_tags='alert alert-success')
             return redirect('vpn:contact')
         else:
             messages.success(request, _('An error occurred while sending your message'),

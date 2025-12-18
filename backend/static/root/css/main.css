@@ -1,10 +1,15 @@
-@import url(./iransansload.css);
+
+html,
+body {
+    direction: ltr;
+    text-align: left;
+}
 
 /* All rights reserved for Vitamin5G.com */
 body {
     background-color: dark;
     color: #ffffff;
-    font: 14px IranSansX, Tahoma, Arial, sans-serif;
+    font: 14px Tahoma, Arial, sans-serif;
     line-height: 29px;
 
     background-size: cover;

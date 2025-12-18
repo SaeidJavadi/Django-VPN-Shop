@@ -5,7 +5,7 @@
     {% trans "Buy VPN" %}
 {% endblock title %}
 {% block body %}
-    <div class="col-md-8 rtl" style="direction: rtl;">
+    <div class="col-md-8 " style="direction: auto;">
         <h1 style="text-align:center;">{{ object.title }}</h1>
     </br>
     <p>{{ object.content|safe }}</p>
@@ -15,7 +15,7 @@
     {% if object.image %}<img alt="help" src="{{ object.image.url }}" style="margin:5px 0 10px 0;">{% endif %}
     {% if object.file %}
     </br>
-    <a href="{{ object.file.url }}" class="btn btn-primary">دانلود فایل</a>
+    <a href="{{ object.file.url }}" class="btn btn-primary">Download the file</a>
 {% endif %}
 </div>
 </div>

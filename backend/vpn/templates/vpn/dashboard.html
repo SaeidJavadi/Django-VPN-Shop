@@ -6,34 +6,34 @@
     {% trans "Dashboard" %}
 {% endblock title %}
 {% block body %}
-    <div class="col-md-8 rtl" style="text-align: center;">
+    <div class="col-md-8 " style="text-align: center;">
         <h2>
-            <a class="btn btn-outline-info" href="{% url 'accounts:profile' %}">ویرایش پروفایل</a>
+            <a class="btn btn-outline-info" href="{% url 'accounts:profile' %}">Edit Profile</a>
         </h2>
-    </br>
-    <h2>سفارش ها</h2>
-    <div class="list-group">
-        <table border = "1">
-            <tr>
-                <td style="color:green;font-weight:bold;">لینک وی پی ان</td>
-                <td style="color:green;">فایل کانفیگ</td>
-                <td style="color:green;">تاریخ سفارش</td>
-            </tr>
-            {% for ordr in ordrs %}
+        <br>
+        <h2>Orders</h2>
+        <div class="list-group">
+            <table border="1">
                 <tr>
-                    <td>{{ ordr.linkvpn }}</td>
-                    {% if ordr.fileconfig %}
-                        <td>
-                            <a href="{{ ordr.fileconfig.url }}">دانلود</a>
-                        </td>
-                    {% else %}
-                        <td>X</td>
-                    {% endif %}
-                    <td>{{ ordr.buydate|tojdt }}</td>
+                    <td style="color:green;font-weight:bold;">VPN Link</td>
+                    <td style="color:green;">Config File</td>
+                    <td style="color:green;">Order Date</td>
                 </tr>
-            {% endfor %}
-        </table>
+                {% for ordr in ordrs %}
+                    <tr>
+                        <td>{{ ordr.linkvpn }}</td>
+                        {% if ordr.fileconfig %}
+                            <td>
+                                <a href="{{ ordr.fileconfig.url }}">Download</a>
+                            </td>
+                        {% else %}
+                            <td>X</td>
+                        {% endif %}
+                        <td>{{ ordr.buydate|tojdt }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
-</div>
-{% include "vpn/sidebar.html" %}
+    {% include "vpn/sidebar.html" %}
 {% endblock body %}

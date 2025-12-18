@@ -9,7 +9,7 @@ from accounts.models import User
 class vpnlist(models.Model):
     title = models.CharField(max_length=150, verbose_name=_("VPN Title"))
     day = models.IntegerField(verbose_name=_("Active Day"))
-    price_t = models.CharField(max_length=150, verbose_name=_("Price Toman"))
+    price_t = models.CharField(max_length=150, verbose_name=_("Price"))
     price_c = models.CharField(max_length=150, verbose_name=_("Price Digital currency"), blank=True, null=True)
     row = models.IntegerField(verbose_name=_("Row"))
     color = models.CharField(max_length=150, verbose_name=_("Color"), null=True, blank=True)
