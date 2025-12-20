@@ -3,7 +3,9 @@ services:
     build:
       context: ../../
       dockerfile: docker/dockerfiles/dev.Dockerfile
-    container_name: vpnshop_dev
+    image: djangovpnshop:dev
+    pull_policy: never
+    container_name: DjangoVPNshop_dev
     restart: always
     working_dir: /app
     volumes:

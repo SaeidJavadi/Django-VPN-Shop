@@ -7,7 +7,8 @@ from django.utils.translation import gettext_lazy as _
 
 class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label='Password confirmation', widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -41,10 +42,13 @@ class UserChangeForm(forms.ModelForm):
 
 class LoginForm(forms.Form):
     email = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'dir': 'ltr'}),   # 'placeholder': 'Email'
+        # 'placeholder': 'Email'
+        widget=forms.TextInput(attrs={'class': 'form-control', 'dir': 'ltr'}),
         label='Email')
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'dir': 'ltr'}),  # 'placeholder': 'Password'
+        # 'placeholder': 'Password'
+        widget=forms.PasswordInput(
+            attrs={'class': 'form-control', 'dir': 'ltr'}),
         label='Password')
 
 

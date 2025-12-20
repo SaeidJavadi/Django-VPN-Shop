@@ -16,11 +16,11 @@
                 {% csrf_token %}
                 <div class="user-box">
                     {{ form.email }}
-                    <label>ایمیل</label>
+                    <label>Email</label>
                 </div>
                 <div class="user-box">
                     {{ form.phone }}
-                    <label>شماره تلفن</label>
+                    <label>phone number</label>
                 </div>
                 <a class="None" href="{% url 'accounts:reset' %}" style="color:red;">{% trans "Change Password" %}</a>
                 <button type="submit">
