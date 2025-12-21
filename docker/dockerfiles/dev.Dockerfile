@@ -15,6 +15,6 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
+    && pip install --no-cache-dir -r requirements.txt && python manage migrate && cp ./backend/.env.example ./backend/.env
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
