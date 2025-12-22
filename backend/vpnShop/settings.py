@@ -223,3 +223,6 @@ if not DEBUG:
     # cookies will only be sent via HTTPS connections
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = [
+    "https://dvs.sjpy.ir",
+]
