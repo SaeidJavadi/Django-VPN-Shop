@@ -28,8 +28,8 @@ MANIFEST
 *.log
 *.pot
 *.pyc
-*.sqlite3
-db.sqlite3
+# *.sqlite3
+# db.sqlite3
 media/
 staticfiles/
 *.mo
