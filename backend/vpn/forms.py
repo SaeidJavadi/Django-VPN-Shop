@@ -11,9 +11,9 @@ class vpnlistForm(forms.ModelForm):
             'title': forms.RadioSelect(attrs={'class': 'form-control'}),
         }
         labels = {
-            'title': 'عنوان',
+            'title': 'title',
         }
-        forceInputField = 'این فیلد اجباری است'
+        forceInputField = 'This field is required'
         error_messages = {
             'title': {
                 'required': forceInputField,
@@ -26,7 +26,7 @@ class vpnlistForm(forms.ModelForm):
             }
         }
         help_texts = {
-            'title': 'ابتدا نوع وی پی ان خود را انتخاب کنید',
+            'title': 'First select your vpn',
         }
 
 
@@ -37,14 +37,14 @@ class ContactForm(forms.ModelForm):
 
         widgets = {
             'name': forms.TextInput(
-                attrs={'class': 'form-control', 'data-error': 'لطفا نام خود را وارد کنید', 'placeholder': 'نام شما',
+                attrs={'class': 'form-control', 'data-error': 'Enter your name', 'placeholder': 'Your Name',
                        'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'data-error': 'لطفا ایمیل خود را وارد کنید',
-                                             'placeholder': 'ایمیل شما', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
-            'phone': forms.NumberInput(attrs={'class': 'form-control', 'data-error': 'لطفا شماره خود را وارد کنید',
-                                              'placeholder': 'شماره تماس شما', 'maxlength': '11', 'dir': 'ltr',
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'data-error': 'Enter your email',
+                                             'placeholder': 'اyour email', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control', 'data-error': 'Enter your phone number',
+                                              'placeholder': 'Your phone number', 'maxlength': '11', 'dir': 'ltr',
                                               'minlength': '11', 'type': 'tel', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;', 'onkeypress': 'return isNumber(event)', 'required': 'false'}),
             'message': forms.Textarea(
-                attrs={'class': 'form-control', 'data-error': 'پیام خود را بنویسید', 'placeholder': 'پیام شما',
+                attrs={'class': 'form-control', 'data-error': 'Write your message', 'placeholder': 'Your Message',
                        'style': 'color:#00FF3E;background-color:#2e2e2ea4;'})
         }
