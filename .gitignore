@@ -40,6 +40,7 @@ staticfiles/
 
 # VSCode
 .vscode/
+.kolo
 
 # mypy
 .mypy_cache/
