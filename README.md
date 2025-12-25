@@ -1,57 +1,72 @@
-# VPN Shop - Sample Online Store
+# 🛡️ VPN Shop - Sample Online Store
 
-VPN Shop is a **sample online store** designed to sell VPN subscriptions.  
-It is built with **Django 4.2** and includes modern features for both the **frontend** and **backend**, along with a **REST API** for programmatic access.
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-4.2-green?logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/SaeidJavadi/Django-VPN-Shop?style=social)](https://github.com/SaeidJavadi/Django-VPN-Shop/stargazers)
 
-## Features
+VPN Shop is a **sample online store** built to sell VPN subscriptions.  
+It is powered by **Django 4.2** and features a modern **frontend**, robust **backend**, and a **REST API** for programmatic access.
 
-- **User Accounts**: Fully functional account system, including registration, login, password reset, and profile management.
-- **Admin Dashboard**: Custom admin panel with enhanced user and content management capabilities.
-- **Product Management**: Create, update, and delete VPN subscription products.
-- **Media & Static Management**: Efficient handling of static files, images, and media uploads.
-- **Payment Gateway Integration**: Sandbox integration for testing payments.
-- **Multilingual Support**: English and Persian languages supported.
-- **Custom Pages & Templates**: Full control over the look and structure of site pages.
-- **Security Features**: Proper password validation and basic security measures implemented.
+🎥 **Demo Video**:
 
-## Project Structure
+https://github.com/user-attachments/assets/67cade8b-29fc-474e-931b-371d08eb6f72
+
+---
+
+## 🌟 Features
+
+- **User Accounts**: Registration, login, password reset, profile management.
+- **Admin Dashboard**: Enhanced admin panel with user and content management.
+- **Product Management**: CRUD operations for VPN subscription products.
+- **Media & Static Management**: Efficient handling of static and media files.
+- **Payment Gateway**: Sandbox integration for testing payments.
+- **Multilingual Support**: English & Persian.
+- **Custom Pages & Templates**: Full control over page layouts.
+- **Security**: Password validation and basic security best practices.
+
+---
+
+## 🗂️ Project Structure
 
 ```
 backend/
-├── accounts/       # User management and authentication
+├── accounts/       # User authentication
 ├── api/            # REST API endpoints
-├── vpn/            # Main app (products, orders, pages)
-├── payment/        # Payment gateway integration
+├── vpn/            # Products, orders, pages
+├── payment/        # Payment integration
 ├── templates/      # HTML templates
 ├── static/         # CSS, JS, images
 ├── media/          # Uploaded media
-├── manage.py       # Django management script
-└── vpnShop/        # Project configuration (settings, urls, wsgi)
-docker/             # Docker development and production configurations
+├── manage.py       # Django management
+└── vpnShop/        # Project config (settings, urls, wsgi)
+docker/             # Docker dev & production configs
 requirements.txt    # Python dependencies
 ```
 
-## Getting Started (Without Docker)
+---
 
-If you want to run the project on your local machine **without Docker**, follow these simple steps:
+## ⚡ Getting Started (Without Docker)
+
+Follow these steps to run the project locally:
 
 ### Prerequisites
 
-- Python **3.12** installed
+- Python **3.12**
 - pip (Python package manager)
 - Virtual environment (recommended)
-- SQLite3 (comes with Python, used by default in development)
+- SQLite3 (default for development)
 
-### Setup Steps
+### Setup
 
-#### 1. **Clone the project:**
+1️⃣ **Clone the repository**
 
 ```bash
 git clone https://github.com/SaeidJavadi/Django-VPN-Shop.git
 cd Django-VPN-Shop/backend
 ```
 
-#### 2. **Create and activate a virtual environment:**
+2️⃣ **Create and activate a virtual environment**
 
 ```bash
 python -m venv venv
@@ -61,73 +76,72 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-#### 3. **Install dependencies:**
+3️⃣ **Install dependencies**
 
 ```bash
 pip install --upgrade pip
 pip install -r ../requirements.txt
 ```
 
-#### 4. **Set up environment variables:**
+4️⃣ **Configure environment variables**
 
-Rename the file `.env.example` to `.env` and set the following content with your own values:
+Rename `.env.example` → `.env` and update your credentials:
 
 ```env
-# Django settings
 SECRET_KEY='your-secret-key'
 DEBUG=True
-
-# Email settings
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_HOST_USER='your-email@example.com'
 EMAIL_HOST_PASSWORD='your-email-password'
-
-# PostgreSQL database settings
 POSTGRES_DB='your_database_name'
 POSTGRES_USER='your_database_user'
 POSTGRES_PASSWORD='your_database_password'
-POSTGRES_HOST='db'   # Name of the database service/container in docker-compose
-POSTGRES_PORT=5432    # Database port inside the container
+POSTGRES_HOST='db'
+POSTGRES_PORT=5432
 ```
 
-#### 5. **Run database migrations:**
+5️⃣ **Run migrations**
 
 ```bash
 python manage.py migrate
 ```
 
-#### 6. **Create a superuser (for admin access):**
+6️⃣ **Create a superuser**
 
 ```bash
 python manage.py createsuperuser
 ```
 
-#### 7. **Run the development server:**
+7️⃣ **Start the development server**
 
 ```bash
 python manage.py runserver
 ```
 
-#### 8. **Access the website:**
+8️⃣ **Access the application**
 
 - Frontend: `http://127.0.0.1:8000/`
-- Admin panel: `http://127.0.0.1:8000/admin/`
+- Admin: `http://127.0.0.1:8000/admin/`
 
 ---
 
-## Notes
+## 🔧 Notes
 
-- All static files are served automatically in **development mode**.
-- The **REST API** is accessible under `/api/`.
-- Media files are stored in the `media/` folder.
+- Static files served automatically in **development**.
+- REST API available under `/api/`.
+- Uploaded media stored in `media/`.
+
+> ✅ This setup allows even beginners to run VPN Shop locally. For **production**, consider Docker + Nginx + Gunicorn.
 
 ---
 
-This setup allows anyone, even beginners, to run the VPN Shop locally for development or testing purposes **without Docker**.  
-For production deployment, using Docker and a proper web server (like Nginx + Gunicorn) is recommended.
+## 🚀 Live Demo
 
-## Live Demo
+[Check the live demo here](https://dvs.sjpy.ir)
 
-🚀 Check out the live demo here:  
-https://dvs.sjpy.ir
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
