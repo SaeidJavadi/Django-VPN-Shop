@@ -40,7 +40,7 @@ class ContactForm(forms.ModelForm):
                 attrs={'class': 'form-control', 'data-error': 'Enter your name', 'placeholder': 'Your Name',
                        'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'data-error': 'Enter your email',
-                                             'placeholder': 'your email', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
+                                             'placeholder': 'Your email', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;'}),
             'phone': forms.NumberInput(attrs={'class': 'form-control', 'data-error': 'Enter your phone number',
                                               'placeholder': 'Your phone number', 'maxlength': '11', 'dir': 'ltr',
                                               'minlength': '11', 'type': 'tel', 'style': 'color:#00FF3E;text-align: center;background-color:#2e2e2ea4;', 'onkeypress': 'return isNumber(event)', 'required': 'false'}),
